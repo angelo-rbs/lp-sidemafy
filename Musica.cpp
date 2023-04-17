@@ -1,14 +1,14 @@
 #include <iostream>
 #include "Musica.h"
 
+Musica::Musica() {
 
-Musica::Musica(std::string titulo, std::string nomeArtista) {
+}
+
+Musica::Musica(std::string titulo, std::string nomeArtsita) {
   this->titulo = titulo;
   this->nomeArtista = nomeArtista;
 }
-
-Musica::Musica() {};
-
 
 std::string Musica::getTitulo() {
   return this->titulo;
