@@ -1,3 +1,5 @@
+#ifndef MUSICA_H
+#define MUSICA_H
 
 class Musica {
 
@@ -10,5 +12,9 @@ class Musica {
     void setTitulo(std::string titulo);
     std::string getNomeArtista();
     void setNomeArtista(std::string titulo);
+    Musica();
+    Musica(std::string titulo, std::string nomeArtista);
 
 };
+
+#endif
