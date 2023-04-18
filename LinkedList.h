@@ -1,23 +1,31 @@
-#include <Node.h>
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
-  template <typename T> class LinkedList {
+#include "Node.h"
 
-    private: 
-      Node<T>* cabeca;
-      size_t tamanho;
-      void incrementarTamanho(); // pode ser chamado no insert ? (deveria)
+template <typename T>
+class LinkedList {
 
-    public:
-      LinkedList();
-      LinkedList(Node<T>* cabeca);
+private:
+  Node<T> *cabeca;
+  size_t tamanho;
+  void incrementarTamanho(); // pode ser chamado no insert ? (deveria)
+  void decrementarTamanho();
 
-      Node<T>* inserirNaPosicao(size_t pos);
-      bool deletarPosicao();
-      Node<T>* encontrarMusica(std::string nome);
-      Node<T>* acessarPosicao(size_t pos);
+public:
+  LinkedList();
+  LinkedList(Node<T> *cabeca);
 
-      Node<T> getCabeca();
-      void setCabeca(Node<T>* node);
+  void printar();
+  Node<T> *inserir(size_t pos, T *value);
+  bool deletar(size_t pos);
+  Node<T> *encontrar(std::string nome);
+  Node<T> *acessar(size_t pos);
 
-      size_t getTamanho();
-  };
+  Node<T> getCabeca();
+  void setCabeca(Node<T> *cabeca);
+
+  size_t getTamanho();
+};
+
+#endif

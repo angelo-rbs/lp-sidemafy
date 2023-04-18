@@ -1,7 +1,8 @@
 #ifndef MUSICA_H
 #define MUSICA_H
 
-class Musica {
+class Musica
+{
 
 private:
   std::string titulo;
@@ -16,7 +17,6 @@ public:
 
   Musica();
   Musica(std::string titulo, std::string nomeArtista);
-
 };
 
 #endif
