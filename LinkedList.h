@@ -15,14 +15,16 @@ private:
 public:
   LinkedList();
   LinkedList(Node<T> *cabeca);
+  LinkedList(T valor);
 
   void printar();
-  Node<T> *inserir(size_t pos, T *value);
+  Node<T> *inserir(size_t pos, T *valor);
+  Node<T> *inserir(size_t pos, T valorPtr);
   bool deletar(size_t pos);
   Node<T> *encontrar(std::string nome);
   Node<T> *acessar(size_t pos);
 
-  Node<T> getCabeca();
+  Node<T> *getCabeca();
   void setCabeca(Node<T> *cabeca);
 
   size_t getTamanho();
