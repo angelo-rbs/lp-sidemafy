@@ -1,1 +1,1 @@
-# Gerenciador de Música
+# Gerenciador de Músicas
