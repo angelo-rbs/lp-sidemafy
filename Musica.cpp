@@ -5,7 +5,7 @@ Musica::Musica() {
 
 }
 
-Musica::Musica(std::string titulo, std::string nomeArtsita) {
+Musica::Musica(std::string titulo, std::string nomeArtista) {
   this->titulo = titulo;
   this->nomeArtista = nomeArtista;
 }
@@ -24,5 +24,13 @@ std::string Musica::getNomeArtista() {
 
 void Musica::setNomeArtista(std::string nomeArtista) {
   this->nomeArtista = nomeArtista;
+}
+
+bool Musica::operator== (Musica &m1) {
+  return (m1.getNomeArtista() == nomeArtista) && (m1.getTitulo() == titulo);
+}
+
+bool Musica::operator!= (Musica &m1) {
+  return !(m1 == *this);
 }
 

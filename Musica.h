@@ -9,6 +9,7 @@ private:
   std::string nomeArtista;
 
 public:
+
   std::string getTitulo();
   void setTitulo(std::string titulo);
 
@@ -17,6 +18,8 @@ public:
 
   Musica();
   Musica(std::string titulo, std::string nomeArtista);
+  bool operator== (Musica &m1);
+  bool operator!= (Musica &m1);
 };
 
 #endif

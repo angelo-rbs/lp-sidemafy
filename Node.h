@@ -3,18 +3,21 @@
 
 template <typename T> class Node {
   private:
-    T* value;
+    T *value;
     Node* nextNode;
 
   public:
-    T getValue();
+    T *getValue();
     void setValue(T value);
 
     Node<T>* getNext();
-    void setNext(Node<T>* ptr);
+    Node<T>* setNext(Node<T>* ptr);
 
     Node();
     Node(T value);
+    Node(T *value);
+    bool operator== (Node<T> &n);
+    bool operator!= (Node<T> &n);
 };
 
 #endif
