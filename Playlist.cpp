@@ -23,26 +23,53 @@ Playlist::Playlist(std::string nome, LinkedList<Musica> lista) {
   }
 }
 
-// reimplementar usando recursão
-
 void Playlist::print() {
 
-  int size = musicas->getTamanho();
+  Node<Musica> *head = this->getMusicas()->getCabeca();
+
+  std::cout << "========================================" << std::endl;
+  std::cout << ((this->getNome() == "") ? "[Playlist sem nome]" : this->getNome()) << std::endl;
+  std::cout << "========================================" << std::endl;
+
+  if (head != nullptr) printWrapped(head, 1);
+  else std::cout << "[Playlist vazia]" << std::endl;
+
+  std::cout << "========================================" << std::endl;
+
+  delete head;
+}
+
+void Playlist::printWrapped(Node<Musica> *node, int pos) {
+
+  Musica *musica = node->getValue(); 
+
+   std::cout << pos << " - " << musica->getTitulo() << ", " << musica->getNomeArtista() << std::endl;
+   if (node->getNext() != nullptr) printWrapped(node->getNext(), pos + 1);
+
+   delete musica;
+}
+
+std::ostream& operator<<(std::ostream &out, Playlist &pl) {
+
+  int size = pl.getMusicas()->getTamanho();
   Musica *musica;
 
-  std::cout << "========================================" << std::endl;
+  out << "========================================" << std::endl;
 
-  if (this->getNome() == "") std::cout << "[Playlist sem nome]" << std::endl;
-  else std::cout << this->getNome() << std::endl;
+  if (pl.getNome() == "") out << "[Playlist sem nome]" << std::endl;
+  else out << pl.getNome() << std::endl;
 
-  std::cout << "========================================" << std::endl;
+  out << "========================================" << std::endl;
 
   for (int i = 0; i < size; i++) {
-    musica = musicas->acessar(i)->getValue();
-    std::cout << (i + 1) << " - " << (*musica).getNomeArtista() << ", " << (*musica).getTitulo() << std::endl;
+    musica = pl.getMusicas()->acessar(i)->getValue();
+    out << (i + 1) << " - " << (*musica).getNomeArtista() << ", " << (*musica).getTitulo() << std::endl;
   }
 
-  std::cout << "========================================" << std::endl;
+  out << "========================================" << std::endl;
+
+  delete musica;
+  return out;
 }
 
 /*
