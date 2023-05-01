@@ -248,3 +248,42 @@ void LinkedList<T>::decrementarTamanho()
 {
   --(this->tamanho);
 }
+
+template <typename T>
+bool LinkedList<T>::contains(T valor) {
+  Node<T> *it = this->cabeca;
+
+  while (it != nullptr) {
+    if (it->getValue() == valor) {
+      return true;
+    }
+    it = it->getNext();
+  }
+
+  return false;
+}
+
+template <typename T>
+bool LinkedList<T>::remove(T valor) {
+  Node<T> *it = this->cabeca, *nodeAnterior = nullptr;
+
+  while (it != nullptr) {
+    if (it->getValue() == valor) {
+      if (nodeAnterior == nullptr) {
+        // Caso estejamos na primeira posição
+        this->cabeca = it->getNext();
+      } else {
+        nodeAnterior->setNext(it->getNext());
+      }
+
+      delete it;
+      this->decrementarTamanho();
+      return true;
+    }
+    nodeAnterior = it;
+    it = it->getNext();
+  }
+
+  return false;
+}
+

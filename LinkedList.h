@@ -33,6 +33,11 @@ public:
   void setCabeca(Node<T> *cabeca);
 
   size_t getTamanho();
+
+  bool contains(T valor);
+  bool remove(T valor);
+
+
 };
 
 #endif
