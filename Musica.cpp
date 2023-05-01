@@ -33,4 +33,3 @@ bool Musica::operator== (Musica &m1) {
 bool Musica::operator!= (Musica &m1) {
   return !(m1 == *this);
 }
-

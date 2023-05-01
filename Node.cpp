@@ -47,4 +47,3 @@ bool Node<T>::operator!= (Node<T> &n) {
  return !(*this == n);
 }
 
-
