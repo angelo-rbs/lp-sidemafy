@@ -1,0 +1,77 @@
+\hypertarget{classGerenciadorMusica}{}\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Classe Gerenciador\+Musica$<$ T $>$}
+\label{classGerenciadorMusica}\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+
+
+Diagrama de colaboração para Gerenciador\+Musica$<$ T $>$\+:
+% FIG 0
+\doxysubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a44b9528f7623701f2315df67c9053e2e}\label{classGerenciadorMusica_a44b9528f7623701f2315df67c9053e2e}} 
+void {\bfseries adicionar\+Musica} (const std\+::string \&nome)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a84be6ae8eb33c1662f857b1b69e70fed}\label{classGerenciadorMusica_a84be6ae8eb33c1662f857b1b69e70fed}} 
+void {\bfseries remover\+Musica} (const std\+::string \&nome)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a79be6e850b575c297a9113ffc6af7db2}\label{classGerenciadorMusica_a79be6e850b575c297a9113ffc6af7db2}} 
+void {\bfseries listar\+Musicas} ()
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a4cc9f77b13d2cc338fa2392a303dd86c}\label{classGerenciadorMusica_a4cc9f77b13d2cc338fa2392a303dd86c}} 
+void {\bfseries adicionar\+Musica} (T valor)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a7f2c9f203177fc1293827ad892a4762d}\label{classGerenciadorMusica_a7f2c9f203177fc1293827ad892a4762d}} 
+void {\bfseries remover\+Musica} (int posicao)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_ab1ac30d5b03b53922c7ee79ff775558b}\label{classGerenciadorMusica_ab1ac30d5b03b53922c7ee79ff775558b}} 
+void {\bfseries mover\+Musica} (int posicao\+Origem, int posicao\+Destino)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_afba0bbddae094a8318bee0644517c655}\label{classGerenciadorMusica_afba0bbddae094a8318bee0644517c655}} 
+void {\bfseries adicionar\+Musica\+Playlist} (int playlist, T valor)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a384730a4761c338deaac94c79cab46d4}\label{classGerenciadorMusica_a384730a4761c338deaac94c79cab46d4}} 
+void {\bfseries remover\+Musica\+Playlist} (int playlist, int posicao)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_ad40440f8b0fa4da0ad14a7e2468ffd9e}\label{classGerenciadorMusica_ad40440f8b0fa4da0ad14a7e2468ffd9e}} 
+void {\bfseries mover\+Musica\+Playlist} (int playlist, int posicao\+Origem, int posicao\+Destino)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a5d705f0687985458eb887600d3bf33b7}\label{classGerenciadorMusica_a5d705f0687985458eb887600d3bf33b7}} 
+void {\bfseries imprimir\+Lista\+Musica} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a22fd213461e56c31c108d0799a03a36f}\label{classGerenciadorMusica_a22fd213461e56c31c108d0799a03a36f}} 
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}} $\ast$ {\bfseries buscar\+Musica} (const std\+::string \&nome)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a2ed232e09ff8719c3bb48c4a153718f9}\label{classGerenciadorMusica_a2ed232e09ff8719c3bb48c4a153718f9}} 
+void {\bfseries remover\+Musica\+De\+Playlists} (const std\+::string \&nome)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_aa0fec74ea65e9a605ef99c31cbe9cd85}\label{classGerenciadorMusica_aa0fec74ea65e9a605ef99c31cbe9cd85}} 
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}} $\ast$ {\bfseries cabeca}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a989adb39428314704f375c6ee21beb65}\label{classGerenciadorMusica_a989adb39428314704f375c6ee21beb65}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$ $\ast$ {\bfseries lista\+Musica}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a6f851a1dd912ada8808a94b2f033a76b}\label{classGerenciadorMusica_a6f851a1dd912ada8808a94b2f033a76b}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$ $\ast$$\ast$ {\bfseries playlists}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a6601ec30ad5ae16b74d6c8c98205a6a7}\label{classGerenciadorMusica_a6601ec30ad5ae16b74d6c8c98205a6a7}} 
+int {\bfseries num\+Playlists}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a99db9c464e7484ee95fbc2eba38f440a}\label{classGerenciadorMusica_a99db9c464e7484ee95fbc2eba38f440a}} 
+int {\bfseries max\+Num\+Playlists}
+\end{DoxyCompactItemize}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Gerenciador\+Musica.\+h\item 
+src/Gerenciador\+Musica.\+cpp\end{DoxyCompactItemize}

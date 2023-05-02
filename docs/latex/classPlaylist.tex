@@ -1,0 +1,57 @@
+\hypertarget{classPlaylist}{}\doxysection{Referência da Classe Playlist}
+\label{classPlaylist}\index{Playlist@{Playlist}}
+
+
+Diagrama de colaboração para Playlist\+:
+% FIG 0
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_af66f530866f4371706f2fbd95147b82e}\label{classPlaylist_af66f530866f4371706f2fbd95147b82e}} 
+{\bfseries Playlist} (std\+::string nome)
+\item 
+\mbox{\Hypertarget{classPlaylist_a51ee9f9acd8ecb84da2e84c0fe5f9df5}\label{classPlaylist_a51ee9f9acd8ecb84da2e84c0fe5f9df5}} 
+{\bfseries Playlist} (std\+::string nome, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ $\ast$lista)
+\item 
+\mbox{\Hypertarget{classPlaylist_ade854b8d8ec9a87a3addb5bfb4f1dd53}\label{classPlaylist_ade854b8d8ec9a87a3addb5bfb4f1dd53}} 
+{\bfseries Playlist} (std\+::string nome, \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ lista)
+\item 
+\mbox{\Hypertarget{classPlaylist_a4a05244477bd2e631039b459b52a50e1}\label{classPlaylist_a4a05244477bd2e631039b459b52a50e1}} 
+void {\bfseries print} ()
+\item 
+\mbox{\Hypertarget{classPlaylist_a1de4d435b452de2ef0b92bb4f310b415}\label{classPlaylist_a1de4d435b452de2ef0b92bb4f310b415}} 
+std\+::string {\bfseries get\+Nome} ()
+\item 
+\mbox{\Hypertarget{classPlaylist_aee971f901696a424cddbace5f7f55298}\label{classPlaylist_aee971f901696a424cddbace5f7f55298}} 
+void {\bfseries set\+Nome} (std\+::string nome)
+\item 
+\mbox{\Hypertarget{classPlaylist_a900b2b74f577945ac20011b4ce8bd4aa}\label{classPlaylist_a900b2b74f577945ac20011b4ce8bd4aa}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ $\ast$ {\bfseries get\+Musicas} ()
+\item 
+\mbox{\Hypertarget{classPlaylist_aa2dd5441b7e30e8d3e1ee7dcafc70fa9}\label{classPlaylist_aa2dd5441b7e30e8d3e1ee7dcafc70fa9}} 
+\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ $\ast$ {\bfseries adicionar\+Musica} (\mbox{\hyperlink{classMusica}{Musica}} $\ast$musica)
+\item 
+\mbox{\Hypertarget{classPlaylist_a16c8b1fa265dc974410522fcd7743faa}\label{classPlaylist_a16c8b1fa265dc974410522fcd7743faa}} 
+bool {\bfseries remover\+Musica} (std\+::string nome\+Musica, std\+::string nome\+Artista)
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_a5fdcec63b6691836ad676b69930e1b2b}\label{classPlaylist_a5fdcec63b6691836ad676b69930e1b2b}} 
+void {\bfseries print\+Wrapped} (\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ $\ast$node, int pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPlaylist_aaf8a5fd7bf6683f2a4a73f35a63cceb3}\label{classPlaylist_aaf8a5fd7bf6683f2a4a73f35a63cceb3}} 
+std\+::string {\bfseries nome}
+\item 
+\mbox{\Hypertarget{classPlaylist_a1e5ce66f60a34bb1efa482467e62a435}\label{classPlaylist_a1e5ce66f60a34bb1efa482467e62a435}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classMusica}{Musica}} $>$ $\ast$ {\bfseries musicas}
+\end{DoxyCompactItemize}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Playlist.\+h\item 
+src/Playlist.\+cpp\end{DoxyCompactItemize}
