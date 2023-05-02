@@ -70,51 +70,85 @@ $(function() {
 <div class="title">LinkedList.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LINKED_LIST_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LINKED_LIST_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Node.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classLinkedList.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLinkedList.html">LinkedList</a> {</div>
+<a href="LinkedList_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef LINKED_LIST_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define LINKED_LIST_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *cabeca;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">size_t</span> tamanho;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">void</span> incrementarTamanho(); </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">void</span> decrementarTamanho();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *avancaPosicoes(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *ptr, <span class="keywordtype">int</span> quantPos);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *wrapped_inserir(<span class="keywordtype">size_t</span> pos, T *valor);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *wrapped_inserir(<span class="keywordtype">size_t</span> pos, T valor);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classLinkedList.html">LinkedList</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classLinkedList.html">LinkedList</a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *cabeca);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classLinkedList.html">LinkedList</a>(T valor);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> printar();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *inserir(<span class="keywordtype">size_t</span> pos, T *valor);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *inserir(<span class="keywordtype">size_t</span> pos, T valorPtr);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *anexar(T valor);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *anexar(T *valorPtr);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> deletar(<span class="keywordtype">size_t</span> pos);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">int</span> encontrar(T valor);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *acessar(<span class="keywordtype">size_t</span> pos);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *getCabeca();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> setCabeca(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *cabeca);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">size_t</span> getTamanho();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">bool</span> contains(T valor);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">bool</span> remove(T valor);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassLinkedList_html"><div class="ttname"><a href="classLinkedList.html">LinkedList</a></div><div class="ttdef"><b>Definition:</b> LinkedList.h:7</div></div>
-<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:4</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Node_8h.html">Node.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classLinkedList.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLinkedList.html">LinkedList</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2">   20</a></span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2">cabeca</a>; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classLinkedList.html#ab3dda64105ad50e2f227b9bd990c6cf6">   21</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classLinkedList.html#ab3dda64105ad50e2f227b9bd990c6cf6">tamanho</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLinkedList.html#a33400fd2b775573a1bfaabf2662051ab">incrementarTamanho</a>(); </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLinkedList.html#ae81353ff7616ca66c20bc368c68648ae">decrementarTamanho</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#ae7e273313359647b277fac7332b2e24f">avancaPosicoes</a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *ptr, <span class="keywordtype">int</span> quantPos);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#af25ffe4434886b831c85f3379b5f753e">wrapped_inserir</a>(<span class="keywordtype">size_t</span> pos, T *valor);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#af25ffe4434886b831c85f3379b5f753e">wrapped_inserir</a>(<span class="keywordtype">size_t</span> pos, T valor);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classLinkedList.html#a3c20fcfec867e867f541061a09fc640c">LinkedList</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classLinkedList.html#a3c20fcfec867e867f541061a09fc640c">LinkedList</a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2">cabeca</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classLinkedList.html#a3c20fcfec867e867f541061a09fc640c">LinkedList</a>(T valor);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLinkedList.html#a74877574a8026df7b516f4f28c627402">printar</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#a36cfdea83c77bd53630fd925976a7922">inserir</a>(<span class="keywordtype">size_t</span> pos, T *valor);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#a36cfdea83c77bd53630fd925976a7922">inserir</a>(<span class="keywordtype">size_t</span> pos, T valorPtr);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#ac39ee6660f854c5a992aff0a28348988">anexar</a>(T valor);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#ac39ee6660f854c5a992aff0a28348988">anexar</a>(T *valorPtr);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLinkedList.html#a8a7e0bd4d1995073e617dc14dcc290df">deletar</a>(<span class="keywordtype">size_t</span> pos);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classLinkedList.html#a3e56c330012fee6b49877700a54805e0">encontrar</a>(T valor);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#a661973d4dcfdcbd8152bb8f213b80313">acessar</a>(<span class="keywordtype">size_t</span> pos);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#a99850c60b2976cbf7bd826d08c0b3db1">getCabeca</a>();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLinkedList.html#a84fbf4f1656aa7714124278df7c67918">setCabeca</a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> *<a class="code" href="classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2">cabeca</a>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classLinkedList.html#ae1ceeca2d6c0facfa7a177d5f3862534">getTamanho</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLinkedList.html#a48decf9b6049eb20a7577d052ac27da3">contains</a>(T valor);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLinkedList.html#ae531797725e9e98dec63af36bb8731d5">remove</a>(T valor);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aNode_8h_html"><div class="ttname"><a href="Node_8h.html">Node.h</a></div><div class="ttdoc">Arquivo cabeçalho da classe Node.</div></div>
+<div class="ttc" id="aclassLinkedList_html"><div class="ttname"><a href="classLinkedList.html">LinkedList</a></div><div class="ttdoc">Classe que define uma lista encadeada.</div><div class="ttdef"><b>Definition:</b> LinkedList.h:17</div></div>
+<div class="ttc" id="aclassLinkedList_html_a33400fd2b775573a1bfaabf2662051ab"><div class="ttname"><a href="classLinkedList.html#a33400fd2b775573a1bfaabf2662051ab">LinkedList::incrementarTamanho</a></div><div class="ttdeci">void incrementarTamanho()</div><div class="ttdoc">Incrementa o tamanho da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:241</div></div>
+<div class="ttc" id="aclassLinkedList_html_a36cfdea83c77bd53630fd925976a7922"><div class="ttname"><a href="classLinkedList.html#a36cfdea83c77bd53630fd925976a7922">LinkedList::inserir</a></div><div class="ttdeci">Node&lt; T &gt; * inserir(size_t pos, T *valor)</div><div class="ttdoc">Insere um valor na lista encadeada em uma determinada posição.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:57</div></div>
+<div class="ttc" id="aclassLinkedList_html_a3c20fcfec867e867f541061a09fc640c"><div class="ttname"><a href="classLinkedList.html#a3c20fcfec867e867f541061a09fc640c">LinkedList::LinkedList</a></div><div class="ttdeci">LinkedList()</div><div class="ttdoc">Construtor padrão da classe LinkedList.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:7</div></div>
+<div class="ttc" id="aclassLinkedList_html_a3e56c330012fee6b49877700a54805e0"><div class="ttname"><a href="classLinkedList.html#a3e56c330012fee6b49877700a54805e0">LinkedList::encontrar</a></div><div class="ttdeci">int encontrar(T valor)</div><div class="ttdoc">Procura um valor na lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:195</div></div>
+<div class="ttc" id="aclassLinkedList_html_a48decf9b6049eb20a7577d052ac27da3"><div class="ttname"><a href="classLinkedList.html#a48decf9b6049eb20a7577d052ac27da3">LinkedList::contains</a></div><div class="ttdeci">bool contains(T valor)</div><div class="ttdoc">Verifica se a lista contém um valor específico.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:253</div></div>
+<div class="ttc" id="aclassLinkedList_html_a661973d4dcfdcbd8152bb8f213b80313"><div class="ttname"><a href="classLinkedList.html#a661973d4dcfdcbd8152bb8f213b80313">LinkedList::acessar</a></div><div class="ttdeci">Node&lt; T &gt; * acessar(size_t pos)</div><div class="ttdoc">Acessa o nó da lista na posição especificada.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:210</div></div>
+<div class="ttc" id="aclassLinkedList_html_a74877574a8026df7b516f4f28c627402"><div class="ttname"><a href="classLinkedList.html#a74877574a8026df7b516f4f28c627402">LinkedList::printar</a></div><div class="ttdeci">void printar()</div><div class="ttdoc">Imprime a lista encadeada na saída padrão.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:28</div></div>
+<div class="ttc" id="aclassLinkedList_html_a84fbf4f1656aa7714124278df7c67918"><div class="ttname"><a href="classLinkedList.html#a84fbf4f1656aa7714124278df7c67918">LinkedList::setCabeca</a></div><div class="ttdeci">void setCabeca(Node&lt; T &gt; *cabeca)</div><div class="ttdoc">Define o nó cabeça da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:229</div></div>
+<div class="ttc" id="aclassLinkedList_html_a8a7e0bd4d1995073e617dc14dcc290df"><div class="ttname"><a href="classLinkedList.html#a8a7e0bd4d1995073e617dc14dcc290df">LinkedList::deletar</a></div><div class="ttdeci">bool deletar(size_t pos)</div><div class="ttdoc">Remove um valor da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:169</div></div>
+<div class="ttc" id="aclassLinkedList_html_a99850c60b2976cbf7bd826d08c0b3db1"><div class="ttname"><a href="classLinkedList.html#a99850c60b2976cbf7bd826d08c0b3db1">LinkedList::getCabeca</a></div><div class="ttdeci">Node&lt; T &gt; * getCabeca()</div><div class="ttdoc">Retorna a cabeça da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:223</div></div>
+<div class="ttc" id="aclassLinkedList_html_ab3dda64105ad50e2f227b9bd990c6cf6"><div class="ttname"><a href="classLinkedList.html#ab3dda64105ad50e2f227b9bd990c6cf6">LinkedList::tamanho</a></div><div class="ttdeci">size_t tamanho</div><div class="ttdef"><b>Definition:</b> LinkedList.h:21</div></div>
+<div class="ttc" id="aclassLinkedList_html_ac39ee6660f854c5a992aff0a28348988"><div class="ttname"><a href="classLinkedList.html#ac39ee6660f854c5a992aff0a28348988">LinkedList::anexar</a></div><div class="ttdeci">Node&lt; T &gt; * anexar(T valor)</div><div class="ttdoc">Adiciona um novo valor no final da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:154</div></div>
+<div class="ttc" id="aclassLinkedList_html_acf308fee1c7e89ec7ea1d96e2896cfe2"><div class="ttname"><a href="classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2">LinkedList::cabeca</a></div><div class="ttdeci">Node&lt; T &gt; * cabeca</div><div class="ttdef"><b>Definition:</b> LinkedList.h:20</div></div>
+<div class="ttc" id="aclassLinkedList_html_ae1ceeca2d6c0facfa7a177d5f3862534"><div class="ttname"><a href="classLinkedList.html#ae1ceeca2d6c0facfa7a177d5f3862534">LinkedList::getTamanho</a></div><div class="ttdeci">size_t getTamanho()</div><div class="ttdoc">Retorna o tamanho da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:235</div></div>
+<div class="ttc" id="aclassLinkedList_html_ae531797725e9e98dec63af36bb8731d5"><div class="ttname"><a href="classLinkedList.html#ae531797725e9e98dec63af36bb8731d5">LinkedList::remove</a></div><div class="ttdeci">bool remove(T valor)</div><div class="ttdoc">Remove um valor da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:267</div></div>
+<div class="ttc" id="aclassLinkedList_html_ae7e273313359647b277fac7332b2e24f"><div class="ttname"><a href="classLinkedList.html#ae7e273313359647b277fac7332b2e24f">LinkedList::avancaPosicoes</a></div><div class="ttdeci">Node&lt; T &gt; * avancaPosicoes(Node&lt; T &gt; *ptr, int quantPos)</div><div class="ttdoc">Avança uma quantidade de posições na lista a partir de um nó dado.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:47</div></div>
+<div class="ttc" id="aclassLinkedList_html_ae81353ff7616ca66c20bc368c68648ae"><div class="ttname"><a href="classLinkedList.html#ae81353ff7616ca66c20bc368c68648ae">LinkedList::decrementarTamanho</a></div><div class="ttdeci">void decrementarTamanho()</div><div class="ttdoc">Decrementa o tamanho da lista.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:247</div></div>
+<div class="ttc" id="aclassLinkedList_html_af25ffe4434886b831c85f3379b5f753e"><div class="ttname"><a href="classLinkedList.html#af25ffe4434886b831c85f3379b5f753e">LinkedList::wrapped_inserir</a></div><div class="ttdeci">Node&lt; T &gt; * wrapped_inserir(size_t pos, T *valor)</div><div class="ttdoc">Insere um valor na lista encadeada em uma determinada posição.</div><div class="ttdef"><b>Definition:</b> LinkedList.cpp:95</div></div>
+<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdoc">Classe template que representa um nó de uma lista encadeada.</div><div class="ttdef"><b>Definition:</b> Node.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

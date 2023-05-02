@@ -1,29 +1,116 @@
 \hypertarget{classMenu}{}\doxysection{Referência da Classe Menu}
 \label{classMenu}\index{Menu@{Menu}}
+
+
+Classe que implementa o menu de um aplicativo de música.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
 \doxysubsection*{Membros Públicos Estáticos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMenu_a32961b23619f06e2b4c695ce3c51349e}\label{classMenu_a32961b23619f06e2b4c695ce3c51349e}} 
-static int {\bfseries show\+Menu} ()
-\item 
-\mbox{\Hypertarget{classMenu_ae31a6d62d62bc253892f4ed3d7eb003e}\label{classMenu_ae31a6d62d62bc253892f4ed3d7eb003e}} 
-static int {\bfseries show\+Sub\+Menu} ()
-\item 
-\mbox{\Hypertarget{classMenu_ac7272295cdac37c062a53cfe6f3e1eaa}\label{classMenu_ac7272295cdac37c062a53cfe6f3e1eaa}} 
-static std\+::string {\bfseries get\+Nome} ()
-\item 
+static int \mbox{\hyperlink{classMenu_a32961b23619f06e2b4c695ce3c51349e}{show\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o menu principal do aplicativo. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classMenu_ae31a6d62d62bc253892f4ed3d7eb003e}{show\+Sub\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o submenu do aplicativo. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classMenu_ac7272295cdac37c062a53cfe6f3e1eaa}{get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome de uma música. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classMenu_a35ddc620dfb9f544b5db88314e6733ac}{get\+Artista}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome do artista de uma música. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classMenu_a1fed5ba78a7817dd0528c353e4e4b500}{get\+Genero}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o gênero de uma música. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classMenu_a7e13ddc44c1f62dbb383cbf4ff18cd61}{get\+Nome\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome de uma playlist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe que implementa o menu de um aplicativo de música. 
+
+\doxysubsection{Funções membros}
 \mbox{\Hypertarget{classMenu_a35ddc620dfb9f544b5db88314e6733ac}\label{classMenu_a35ddc620dfb9f544b5db88314e6733ac}} 
-static std\+::string {\bfseries get\+Artista} ()
-\item 
+\index{Menu@{Menu}!getArtista@{getArtista}}
+\index{getArtista@{getArtista}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getArtista()}{getArtista()}}
+{\footnotesize\ttfamily std\+::string Menu\+::get\+Artista (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtém o nome do artista de uma música. 
+
+\begin{DoxyReturn}{Retorna}
+Nome do artista. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classMenu_a1fed5ba78a7817dd0528c353e4e4b500}\label{classMenu_a1fed5ba78a7817dd0528c353e4e4b500}} 
-static std\+::string {\bfseries get\+Genero} ()
-\item 
+\index{Menu@{Menu}!getGenero@{getGenero}}
+\index{getGenero@{getGenero}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getGenero()}{getGenero()}}
+{\footnotesize\ttfamily std\+::string Menu\+::get\+Genero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtém o gênero de uma música. 
+
+\begin{DoxyReturn}{Retorna}
+Gênero da música. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_ac7272295cdac37c062a53cfe6f3e1eaa}\label{classMenu_ac7272295cdac37c062a53cfe6f3e1eaa}} 
+\index{Menu@{Menu}!getNome@{getNome}}
+\index{getNome@{getNome}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Menu\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtém o nome de uma música. 
+
+\begin{DoxyReturn}{Retorna}
+Nome da música. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classMenu_a7e13ddc44c1f62dbb383cbf4ff18cd61}\label{classMenu_a7e13ddc44c1f62dbb383cbf4ff18cd61}} 
-static std\+::string {\bfseries get\+Nome\+Playlist} ()
-\end{DoxyCompactItemize}
+\index{Menu@{Menu}!getNomePlaylist@{getNomePlaylist}}
+\index{getNomePlaylist@{getNomePlaylist}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getNomePlaylist()}{getNomePlaylist()}}
+{\footnotesize\ttfamily std\+::string Menu\+::get\+Nome\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtém o nome de uma playlist. 
+
+\begin{DoxyReturn}{Retorna}
+Nome da playlist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_a32961b23619f06e2b4c695ce3c51349e}\label{classMenu_a32961b23619f06e2b4c695ce3c51349e}} 
+\index{Menu@{Menu}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily int Menu\+::show\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o menu principal do aplicativo. 
+
+\begin{DoxyReturn}{Retorna}
+Opção selecionada pelo usuário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_ae31a6d62d62bc253892f4ed3d7eb003e}\label{classMenu_ae31a6d62d62bc253892f4ed3d7eb003e}} 
+\index{Menu@{Menu}!showSubMenu@{showSubMenu}}
+\index{showSubMenu@{showSubMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showSubMenu()}{showSubMenu()}}
+{\footnotesize\ttfamily int Menu\+::show\+Sub\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exibe o submenu do aplicativo. 
+
+\begin{DoxyReturn}{Retorna}
+Opção selecionada pelo usuário. 
+\end{DoxyReturn}
 
 
 A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Menu.\+h\item 
+include/\mbox{\hyperlink{Menu_8h}{Menu.\+h}}\item 
 src/Menu.\+cpp\end{DoxyCompactItemize}

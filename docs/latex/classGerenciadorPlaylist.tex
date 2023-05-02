@@ -2,41 +2,175 @@
 \label{classGerenciadorPlaylist}\index{GerenciadorPlaylist@{GerenciadorPlaylist}}
 
 
+Classe responsável por gerenciar as playlists.  
+
+
+
+
+{\ttfamily \#include $<$Gerenciador\+Playlist.\+h$>$}
+
+
+
 Diagrama de colaboração para Gerenciador\+Playlist\+:
 % FIG 0
 \doxysubsection*{Membros Públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_a4ed966c9f37bd3c6ec953e574332bb4e}\label{classGerenciadorPlaylist_a4ed966c9f37bd3c6ec953e574332bb4e}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ {\bfseries adicionar\+Playlist} (\mbox{\hyperlink{classPlaylist}{Playlist}} $\ast$playlist)
-\item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_aef82c8803ce6b5a04c4a0a7ee0bd53e9}\label{classGerenciadorPlaylist_aef82c8803ce6b5a04c4a0a7ee0bd53e9}} 
-bool {\bfseries remover\+Playlist} (std\+::string nome\+Playlist)
-\item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33}\label{classGerenciadorPlaylist_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ {\bfseries encontrar\+Playlist} (std\+::string nome\+Playlist)
-\item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_ab64c8b90a03b116dc1d373229eeb8f2f}\label{classGerenciadorPlaylist_ab64c8b90a03b116dc1d373229eeb8f2f}} 
-bool {\bfseries adicionar\+Musica} (std\+::string nome\+Playlist, \mbox{\hyperlink{classMusica}{Musica}} $\ast$musica)
-\item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_a7751ab1122c8584db696cca8f51cbe76}\label{classGerenciadorPlaylist_a7751ab1122c8584db696cca8f51cbe76}} 
-bool {\bfseries remover\+Musica} (std\+::string nome\+Playlist, std\+::string titulo, std\+::string nome\+Artista)
-\item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_ab1236e6c847ef53bda1333a08f97a813}\label{classGerenciadorPlaylist_ab1236e6c847ef53bda1333a08f97a813}} 
-void {\bfseries imprimir\+Playlist} (std\+::string nome\+Playlist)
-\item 
+\mbox{\Hypertarget{classGerenciadorPlaylist_a98dce1f598c54c501ebb09e62bd4517c}\label{classGerenciadorPlaylist_a98dce1f598c54c501ebb09e62bd4517c}} 
+\mbox{\hyperlink{classGerenciadorPlaylist_a98dce1f598c54c501ebb09e62bd4517c}{Gerenciador\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \mbox{\hyperlink{classGerenciadorPlaylist}{Gerenciador\+Playlist}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGerenciadorPlaylist_ada95652e8a3c197ce8908703b2e9b89b}\label{classGerenciadorPlaylist_ada95652e8a3c197ce8908703b2e9b89b}} 
+\mbox{\hyperlink{classGerenciadorPlaylist_ada95652e8a3c197ce8908703b2e9b89b}{$\sim$\+Gerenciador\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \mbox{\hyperlink{classGerenciadorPlaylist}{Gerenciador\+Playlist}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ \mbox{\hyperlink{classGerenciadorPlaylist_a4ed966c9f37bd3c6ec953e574332bb4e}{adicionar\+Playlist}} (\mbox{\hyperlink{classPlaylist}{Playlist}} $\ast$playlist)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova playlist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGerenciadorPlaylist_aef82c8803ce6b5a04c4a0a7ee0bd53e9}{remover\+Playlist}} (std\+::string nome\+Playlist)
+\begin{DoxyCompactList}\small\item\em Remove uma playlist. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ \mbox{\hyperlink{classGerenciadorPlaylist_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33}{encontrar\+Playlist}} (std\+::string nome\+Playlist)
+\begin{DoxyCompactList}\small\item\em Encontra uma playlist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGerenciadorPlaylist_ab64c8b90a03b116dc1d373229eeb8f2f}{adicionar\+Musica}} (std\+::string nome\+Playlist, \mbox{\hyperlink{classMusica}{Musica}} $\ast$musica)
+\begin{DoxyCompactList}\small\item\em Adiciona uma música a uma playlist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGerenciadorPlaylist_a7751ab1122c8584db696cca8f51cbe76}{remover\+Musica}} (std\+::string nome\+Playlist, std\+::string titulo, std\+::string nome\+Artista)
+\begin{DoxyCompactList}\small\item\em Remove uma música de uma playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorPlaylist_ab1236e6c847ef53bda1333a08f97a813}{imprimir\+Playlist}} (std\+::string nome\+Playlist)
+\begin{DoxyCompactList}\small\item\em Imprime os dados de uma playlist. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classGerenciadorPlaylist_a1128b028f3d16b3a3dccacfdeedf0e85}\label{classGerenciadorPlaylist_a1128b028f3d16b3a3dccacfdeedf0e85}} 
-void {\bfseries imprimir\+Todas\+Playlists} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classGerenciadorPlaylist_a1128b028f3d16b3a3dccacfdeedf0e85}{imprimir\+Todas\+Playlists}} ()
+\begin{DoxyCompactList}\small\item\em Imprime os dados de todas as playlists. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGerenciadorPlaylist_a21d90c39f43df5ff376e9e9a7ea32ce0}\label{classGerenciadorPlaylist_a21d90c39f43df5ff376e9e9a7ea32ce0}} 
-\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ {\bfseries playlists}
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ \mbox{\hyperlink{classGerenciadorPlaylist_a21d90c39f43df5ff376e9e9a7ea32ce0}{playlists}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Descrição detalhada}
+Classe responsável por gerenciar as playlists. 
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{classGerenciadorPlaylist_ab64c8b90a03b116dc1d373229eeb8f2f}\label{classGerenciadorPlaylist_ab64c8b90a03b116dc1d373229eeb8f2f}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!adicionarMusica@{adicionarMusica}}
+\index{adicionarMusica@{adicionarMusica}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{adicionarMusica()}{adicionarMusica()}}
+{\footnotesize\ttfamily bool Gerenciador\+Playlist\+::adicionar\+Musica (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Playlist,  }\item[{\mbox{\hyperlink{classMusica}{Musica}} $\ast$}]{musica }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma música a uma playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome\+Playlist} & Nome da playlist onde a música será adicionada. \\
+\hline
+{\em musica} & Ponteiro para a música a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro se a música foi adicionada com sucesso, falso caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGerenciadorPlaylist_a4ed966c9f37bd3c6ec953e574332bb4e}\label{classGerenciadorPlaylist_a4ed966c9f37bd3c6ec953e574332bb4e}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!adicionarPlaylist@{adicionarPlaylist}}
+\index{adicionarPlaylist@{adicionarPlaylist}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{adicionarPlaylist()}{adicionarPlaylist()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ Gerenciador\+Playlist\+::adicionar\+Playlist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlaylist}{Playlist}} $\ast$}]{playlist }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma nova playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em playlist} & Ponteiro para a playlist a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó da lista de playlists que contém a playlist adicionada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGerenciadorPlaylist_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33}\label{classGerenciadorPlaylist_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!encontrarPlaylist@{encontrarPlaylist}}
+\index{encontrarPlaylist@{encontrarPlaylist}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{encontrarPlaylist()}{encontrarPlaylist()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$<$ \mbox{\hyperlink{classPlaylist}{Playlist}} $>$ $\ast$ Gerenciador\+Playlist\+::encontrar\+Playlist (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Playlist }\end{DoxyParamCaption})}
+
+
+
+Encontra uma playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome\+Playlist} & Nome da playlist a ser encontrada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó da lista de playlists que contém a playlist encontrada, ou nullptr se a playlist não foi encontrada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGerenciadorPlaylist_ab1236e6c847ef53bda1333a08f97a813}\label{classGerenciadorPlaylist_ab1236e6c847ef53bda1333a08f97a813}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!imprimirPlaylist@{imprimirPlaylist}}
+\index{imprimirPlaylist@{imprimirPlaylist}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{imprimirPlaylist()}{imprimirPlaylist()}}
+{\footnotesize\ttfamily void Gerenciador\+Playlist\+::imprimir\+Playlist (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Playlist }\end{DoxyParamCaption})}
+
+
+
+Imprime os dados de uma playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome\+Playlist} & Nome da playlist a ser impressa. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGerenciadorPlaylist_a7751ab1122c8584db696cca8f51cbe76}\label{classGerenciadorPlaylist_a7751ab1122c8584db696cca8f51cbe76}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!removerMusica@{removerMusica}}
+\index{removerMusica@{removerMusica}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{removerMusica()}{removerMusica()}}
+{\footnotesize\ttfamily bool Gerenciador\+Playlist\+::remover\+Musica (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Playlist,  }\item[{std\+::string}]{titulo,  }\item[{std\+::string}]{nome\+Artista }\end{DoxyParamCaption})}
+
+
+
+Remove uma música de uma playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome\+Playlist} & Nome da playlist onde a música será removida. \\
+\hline
+{\em titulo} & Título da música a ser removida. \\
+\hline
+{\em nome\+Artista} & Nome do artista da música a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro se a música foi removida com sucesso, falso caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGerenciadorPlaylist_aef82c8803ce6b5a04c4a0a7ee0bd53e9}\label{classGerenciadorPlaylist_aef82c8803ce6b5a04c4a0a7ee0bd53e9}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!removerPlaylist@{removerPlaylist}}
+\index{removerPlaylist@{removerPlaylist}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{removerPlaylist()}{removerPlaylist()}}
+{\footnotesize\ttfamily bool Gerenciador\+Playlist\+::remover\+Playlist (\begin{DoxyParamCaption}\item[{std\+::string}]{nome\+Playlist }\end{DoxyParamCaption})}
+
+
+
+Remove uma playlist. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome\+Playlist} & Nome da playlist a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro se a playlist foi removida com sucesso, falso caso contrário. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{classGerenciadorPlaylist_a21d90c39f43df5ff376e9e9a7ea32ce0}\label{classGerenciadorPlaylist_a21d90c39f43df5ff376e9e9a7ea32ce0}} 
+\index{GerenciadorPlaylist@{GerenciadorPlaylist}!playlists@{playlists}}
+\index{playlists@{playlists}!GerenciadorPlaylist@{GerenciadorPlaylist}}
+\doxysubsubsection{\texorpdfstring{playlists}{playlists}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$\mbox{\hyperlink{classPlaylist}{Playlist}}$>$$\ast$ Gerenciador\+Playlist\+::playlists\hspace{0.3cm}{\ttfamily [private]}}
+
+Ponteiro para lista de playlists. 
+
 A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Gerenciador\+Playlist.\+h\item 
+include/\mbox{\hyperlink{GerenciadorPlaylist_8h}{Gerenciador\+Playlist.\+h}}\item 
 src/Gerenciador\+Playlist.\+cpp\end{DoxyCompactItemize}

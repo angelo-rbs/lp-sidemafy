@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['linkedlist_3',['LinkedList',['../classLinkedList.html',1,'']]],
-  ['linkedlist_3c_20musica_20_3e_4',['LinkedList&lt; Musica &gt;',['../classLinkedList.html',1,'']]],
-  ['linkedlist_3c_20playlist_20_3e_5',['LinkedList&lt; Playlist &gt;',['../classLinkedList.html',1,'']]],
-  ['linkedlist_3c_20std_3a_3astring_20_3e_6',['LinkedList&lt; std::string &gt;',['../classLinkedList.html',1,'']]]
+  ['buscarmusica_5',['buscarMusica',['../classGerenciadorMusica.html#a22fd213461e56c31c108d0799a03a36f',1,'GerenciadorMusica']]]
 ];

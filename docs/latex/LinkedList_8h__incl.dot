@@ -1,0 +1,9 @@
+digraph "include/LinkedList.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/LinkedList.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definição da classe LinkedList para implementação de uma lista encadeada."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Node.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Node_8h.html",tooltip="Arquivo cabeçalho da classe Node."];
+}

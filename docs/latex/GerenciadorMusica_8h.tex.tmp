@@ -1,0 +1,24 @@
+\hypertarget{GerenciadorMusica_8h}{}\doxysection{Referência do Arquivo include/\+Gerenciador\+Musica.h}
+\label{GerenciadorMusica_8h}\index{include/GerenciadorMusica.h@{include/GerenciadorMusica.h}}
+
+
+Definição da classe \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Linked\+List.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Musica.\+h\char`\"{}}\newline
+Gráfico de dependência de inclusões para Gerenciador\+Musica.\+h\+:
+% FIG 0
+\doxysubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Classe responsável por gerenciar músicas e suas playlists. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Gerenciador\+Musica$<$ T $>$\+::\+Musica}}
+\begin{DoxyCompactList}\small\item\em Estrutura interna para armazenar informações sobre as músicas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Definição da classe \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}. 
+

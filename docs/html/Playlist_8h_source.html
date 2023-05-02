@@ -70,39 +70,60 @@ $(function() {
 <div class="title">Playlist.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;LinkedList.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Musica.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classPlaylist.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlaylist.html">Playlist</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::string nome;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> *musicas;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> printWrapped(<a class="code" href="classNode.html">Node&lt;Musica&gt;</a> *node, <span class="keywordtype">int</span> pos);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classPlaylist.html">Playlist</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classPlaylist.html">Playlist</a>(std::string nome);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classPlaylist.html">Playlist</a>(std::string nome, <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> *lista);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classPlaylist.html">Playlist</a>(std::string nome, <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> lista);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> print();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string getNome();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setNome(std::string nome);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a>* getMusicas();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classNode.html">Node&lt;Musica&gt;</a>* adicionarMusica(<a class="code" href="classMusica.html">Musica</a>* musica);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> removerMusica(std::string nomeMusica, std::string nomeArtista);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream &amp;out, <a class="code" href="classPlaylist.html">Playlist</a> &amp;pl);</div>
+<a href="Playlist_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LinkedList_8h.html">LinkedList.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Musica_8h.html">Musica.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classPlaylist.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlaylist.html">Playlist</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">   17</a></span>&#160;    std::string <a class="code" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">nome</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPlaylist.html#a1e5ce66f60a34bb1efa482467e62a435">   18</a></span>&#160;    <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> *<a class="code" href="classPlaylist.html#a1e5ce66f60a34bb1efa482467e62a435">musicas</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlaylist.html#a5fdcec63b6691836ad676b69930e1b2b">printWrapped</a>(<a class="code" href="classNode.html">Node&lt;Musica&gt;</a> *node, <span class="keywordtype">int</span> pos);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classPlaylist.html#af66f530866f4371706f2fbd95147b82e">   38</a></span>&#160;    <a class="code" href="classPlaylist.html#af66f530866f4371706f2fbd95147b82e">Playlist</a>(std::string <a class="code" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">nome</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist</a>(std::string <a class="code" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">nome</a>, <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> *lista);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist</a>(std::string <a class="code" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">nome</a>, <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a> lista);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlaylist.html#a4a05244477bd2e631039b459b52a50e1">print</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::string <a class="code" href="classPlaylist.html#a1de4d435b452de2ef0b92bb4f310b415">getNome</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlaylist.html#aee971f901696a424cddbace5f7f55298">setNome</a>(std::string <a class="code" href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">nome</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classLinkedList.html">LinkedList&lt;Musica&gt;</a>* <a class="code" href="classPlaylist.html#a900b2b74f577945ac20011b4ce8bd4aa">getMusicas</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classNode.html">Node&lt;Musica&gt;</a>* <a class="code" href="classPlaylist.html#aa2dd5441b7e30e8d3e1ee7dcafc70fa9">adicionarMusica</a>(<a class="code" href="classMusica.html">Musica</a>* musica);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPlaylist.html#a16c8b1fa265dc974410522fcd7743faa">removerMusica</a>(std::string nomeMusica, std::string nomeArtista);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;std::ostream&amp; <a class="code" href="Playlist_8h.html#ad07c5ba4fb803ecffb641c1b19e55a45">operator&lt;&lt;</a>(std::ostream &amp;out, <a class="code" href="classPlaylist.html">Playlist</a> &amp;pl);</div>
+<div class="ttc" id="aLinkedList_8h_html"><div class="ttname"><a href="LinkedList_8h.html">LinkedList.h</a></div><div class="ttdoc">Definição da classe LinkedList para implementação de uma lista encadeada.</div></div>
+<div class="ttc" id="aMusica_8h_html"><div class="ttname"><a href="Musica_8h.html">Musica.h</a></div><div class="ttdoc">Definição da classe Musica e seus métodos.</div></div>
+<div class="ttc" id="aPlaylist_8h_html_ad07c5ba4fb803ecffb641c1b19e55a45"><div class="ttname"><a href="Playlist_8h.html#ad07c5ba4fb803ecffb641c1b19e55a45">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, Playlist &amp;pl)</div><div class="ttdoc">Sobrecarga do operador de impressão (&lt;&lt;) para a classe Playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:52</div></div>
 <div class="ttc" id="aclassLinkedList_html"><div class="ttname"><a href="classLinkedList.html">LinkedList&lt; Musica &gt;</a></div></div>
-<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdef"><b>Definition:</b> Musica.h:5</div></div>
-<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:4</div></div>
-<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdef"><b>Definition:</b> Playlist.h:6</div></div>
+<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdoc">Classe que representa uma música.</div><div class="ttdef"><b>Definition:</b> Musica.h:14</div></div>
+<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdoc">Classe template que representa um nó de uma lista encadeada.</div><div class="ttdef"><b>Definition:</b> Node.h:14</div></div>
+<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdoc">Classe que representa uma playlist de músicas.</div><div class="ttdef"><b>Definition:</b> Playlist.h:14</div></div>
+<div class="ttc" id="aclassPlaylist_html_a16c8b1fa265dc974410522fcd7743faa"><div class="ttname"><a href="classPlaylist.html#a16c8b1fa265dc974410522fcd7743faa">Playlist::removerMusica</a></div><div class="ttdeci">bool removerMusica(std::string nomeMusica, std::string nomeArtista)</div><div class="ttdoc">Remove uma música da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:92</div></div>
+<div class="ttc" id="aclassPlaylist_html_a1de4d435b452de2ef0b92bb4f310b415"><div class="ttname"><a href="classPlaylist.html#a1de4d435b452de2ef0b92bb4f310b415">Playlist::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:75</div></div>
+<div class="ttc" id="aclassPlaylist_html_a1e5ce66f60a34bb1efa482467e62a435"><div class="ttname"><a href="classPlaylist.html#a1e5ce66f60a34bb1efa482467e62a435">Playlist::musicas</a></div><div class="ttdeci">LinkedList&lt; Musica &gt; * musicas</div><div class="ttdef"><b>Definition:</b> Playlist.h:18</div></div>
+<div class="ttc" id="aclassPlaylist_html_a4a05244477bd2e631039b459b52a50e1"><div class="ttname"><a href="classPlaylist.html#a4a05244477bd2e631039b459b52a50e1">Playlist::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Função que imprime as músicas da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:26</div></div>
+<div class="ttc" id="aclassPlaylist_html_a5fdcec63b6691836ad676b69930e1b2b"><div class="ttname"><a href="classPlaylist.html#a5fdcec63b6691836ad676b69930e1b2b">Playlist::printWrapped</a></div><div class="ttdeci">void printWrapped(Node&lt; Musica &gt; *node, int pos)</div><div class="ttdoc">Função auxiliar para impressão das músicas da playlist de forma quebrada em linhas.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:42</div></div>
+<div class="ttc" id="aclassPlaylist_html_a900b2b74f577945ac20011b4ce8bd4aa"><div class="ttname"><a href="classPlaylist.html#a900b2b74f577945ac20011b4ce8bd4aa">Playlist::getMusicas</a></div><div class="ttdeci">LinkedList&lt; Musica &gt; * getMusicas()</div><div class="ttdoc">Retorna a lista encadeada das músicas da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:79</div></div>
+<div class="ttc" id="aclassPlaylist_html_aa2dd5441b7e30e8d3e1ee7dcafc70fa9"><div class="ttname"><a href="classPlaylist.html#aa2dd5441b7e30e8d3e1ee7dcafc70fa9">Playlist::adicionarMusica</a></div><div class="ttdeci">Node&lt; Musica &gt; * adicionarMusica(Musica *musica)</div><div class="ttdoc">Adiciona uma música à playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:88</div></div>
+<div class="ttc" id="aclassPlaylist_html_aaf8a5fd7bf6683f2a4a73f35a63cceb3"><div class="ttname"><a href="classPlaylist.html#aaf8a5fd7bf6683f2a4a73f35a63cceb3">Playlist::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> Playlist.h:17</div></div>
+<div class="ttc" id="aclassPlaylist_html_aee971f901696a424cddbace5f7f55298"><div class="ttname"><a href="classPlaylist.html#aee971f901696a424cddbace5f7f55298">Playlist::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Define o nome da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:84</div></div>
+<div class="ttc" id="aclassPlaylist_html_aef38d55e42995be147977726350f3ada"><div class="ttname"><a href="classPlaylist.html#aef38d55e42995be147977726350f3ada">Playlist::Playlist</a></div><div class="ttdeci">Playlist()</div><div class="ttdoc">Construtor padrão da classe Playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.cpp:5</div></div>
+<div class="ttc" id="aclassPlaylist_html_af66f530866f4371706f2fbd95147b82e"><div class="ttname"><a href="classPlaylist.html#af66f530866f4371706f2fbd95147b82e">Playlist::Playlist</a></div><div class="ttdeci">Playlist(std::string nome)</div><div class="ttdoc">Construtor da classe Playlist que recebe um nome.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

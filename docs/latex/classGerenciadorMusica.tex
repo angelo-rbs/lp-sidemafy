@@ -2,4 +2,172 @@
 \label{classGerenciadorMusica}\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
 
 
+Classe responsável por gerenciar músicas e suas playlists.  
+
+
+
+
+{\ttfamily \#include $<$Gerenciador\+Musica.\+h$>$}
+
+
+
 Diagrama de colaboração para Gerenciador\+Musica$<$ T $>$\+:
+% FIG 0
+\doxysubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}}
+\begin{DoxyCompactList}\small\item\em Estrutura interna para armazenar informações sobre as músicas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a852ae4d83e151055dc83622c11fc3422}\label{classGerenciadorMusica_a852ae4d83e151055dc83622c11fc3422}} 
+\mbox{\hyperlink{classGerenciadorMusica_a852ae4d83e151055dc83622c11fc3422}{Gerenciador\+Musica}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a2515224d15af32961ae5f835fc87319b}\label{classGerenciadorMusica_a2515224d15af32961ae5f835fc87319b}} 
+\mbox{\hyperlink{classGerenciadorMusica_a2515224d15af32961ae5f835fc87319b}{$\sim$\+Gerenciador\+Musica}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorMusica_a44b9528f7623701f2315df67c9053e2e}{adicionar\+Musica}} (const std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova música ao gerenciador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorMusica_a84be6ae8eb33c1662f857b1b69e70fed}{remover\+Musica}} (const std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Remove uma música do gerenciador. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a79be6e850b575c297a9113ffc6af7db2}\label{classGerenciadorMusica_a79be6e850b575c297a9113ffc6af7db2}} 
+void \mbox{\hyperlink{classGerenciadorMusica_a79be6e850b575c297a9113ffc6af7db2}{listar\+Musicas}} ()
+\begin{DoxyCompactList}\small\item\em Lista todas as músicas do gerenciador. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a4cc9f77b13d2cc338fa2392a303dd86c}\label{classGerenciadorMusica_a4cc9f77b13d2cc338fa2392a303dd86c}} 
+void {\bfseries adicionar\+Musica} (T valor)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a7f2c9f203177fc1293827ad892a4762d}\label{classGerenciadorMusica_a7f2c9f203177fc1293827ad892a4762d}} 
+void {\bfseries remover\+Musica} (int posicao)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_ab1ac30d5b03b53922c7ee79ff775558b}\label{classGerenciadorMusica_ab1ac30d5b03b53922c7ee79ff775558b}} 
+void {\bfseries mover\+Musica} (int posicao\+Origem, int posicao\+Destino)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_afba0bbddae094a8318bee0644517c655}\label{classGerenciadorMusica_afba0bbddae094a8318bee0644517c655}} 
+void {\bfseries adicionar\+Musica\+Playlist} (int playlist, T valor)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a384730a4761c338deaac94c79cab46d4}\label{classGerenciadorMusica_a384730a4761c338deaac94c79cab46d4}} 
+void {\bfseries remover\+Musica\+Playlist} (int playlist, int posicao)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_ad40440f8b0fa4da0ad14a7e2468ffd9e}\label{classGerenciadorMusica_ad40440f8b0fa4da0ad14a7e2468ffd9e}} 
+void {\bfseries mover\+Musica\+Playlist} (int playlist, int posicao\+Origem, int posicao\+Destino)
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a5d705f0687985458eb887600d3bf33b7}\label{classGerenciadorMusica_a5d705f0687985458eb887600d3bf33b7}} 
+void {\bfseries imprimir\+Lista\+Musica} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}} $\ast$ \mbox{\hyperlink{classGerenciadorMusica_a22fd213461e56c31c108d0799a03a36f}{buscar\+Musica}} (const std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Busca uma música pelo nome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGerenciadorMusica_a2ed232e09ff8719c3bb48c4a153718f9}{remover\+Musica\+De\+Playlists}} (const std\+::string \&nome)
+\begin{DoxyCompactList}\small\item\em Remove a música de todas as playlists em que ela está presente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}} $\ast$ \mbox{\hyperlink{classGerenciadorMusica_aa0fec74ea65e9a605ef99c31cbe9cd85}{cabeca}}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a989adb39428314704f375c6ee21beb65}\label{classGerenciadorMusica_a989adb39428314704f375c6ee21beb65}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$ $\ast$ {\bfseries lista\+Musica}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a6f851a1dd912ada8808a94b2f033a76b}\label{classGerenciadorMusica_a6f851a1dd912ada8808a94b2f033a76b}} 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$ $\ast$$\ast$ {\bfseries playlists}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a6601ec30ad5ae16b74d6c8c98205a6a7}\label{classGerenciadorMusica_a6601ec30ad5ae16b74d6c8c98205a6a7}} 
+int {\bfseries num\+Playlists}
+\item 
+\mbox{\Hypertarget{classGerenciadorMusica_a99db9c464e7484ee95fbc2eba38f440a}\label{classGerenciadorMusica_a99db9c464e7484ee95fbc2eba38f440a}} 
+int {\bfseries max\+Num\+Playlists}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename T$>$\newline
+class Gerenciador\+Musica$<$ T $>$}
+
+Classe responsável por gerenciar músicas e suas playlists. 
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{classGerenciadorMusica_a44b9528f7623701f2315df67c9053e2e}\label{classGerenciadorMusica_a44b9528f7623701f2315df67c9053e2e}} 
+\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}!adicionarMusica@{adicionarMusica}}
+\index{adicionarMusica@{adicionarMusica}!GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{adicionarMusica()}{adicionarMusica()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}$<$ T $>$\+::adicionar\+Musica (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nome }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma nova música ao gerenciador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & O nome da nova música. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGerenciadorMusica_a22fd213461e56c31c108d0799a03a36f}\label{classGerenciadorMusica_a22fd213461e56c31c108d0799a03a36f}} 
+\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}!buscarMusica@{buscarMusica}}
+\index{buscarMusica@{buscarMusica}!GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{buscarMusica()}{buscarMusica()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}}$\ast$ \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}$<$ T $>$\+::buscar\+Musica (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Busca uma música pelo nome. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & O nome da música a ser buscada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um ponteiro para a estrutura da música, ou nullptr se a música não for encontrada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGerenciadorMusica_a84be6ae8eb33c1662f857b1b69e70fed}\label{classGerenciadorMusica_a84be6ae8eb33c1662f857b1b69e70fed}} 
+\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}!removerMusica@{removerMusica}}
+\index{removerMusica@{removerMusica}!GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removerMusica()}{removerMusica()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}$<$ T $>$\+::remover\+Musica (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nome }\end{DoxyParamCaption})}
+
+
+
+Remove uma música do gerenciador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & O nome da música a ser removida. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGerenciadorMusica_a2ed232e09ff8719c3bb48c4a153718f9}\label{classGerenciadorMusica_a2ed232e09ff8719c3bb48c4a153718f9}} 
+\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}!removerMusicaDePlaylists@{removerMusicaDePlaylists}}
+\index{removerMusicaDePlaylists@{removerMusicaDePlaylists}!GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removerMusicaDePlaylists()}{removerMusicaDePlaylists()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}$<$ T $>$\+::remover\+Musica\+De\+Playlists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remove a música de todas as playlists em que ela está presente. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & O nome da música a ser removida. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{classGerenciadorMusica_aa0fec74ea65e9a605ef99c31cbe9cd85}\label{classGerenciadorMusica_aa0fec74ea65e9a605ef99c31cbe9cd85}} 
+\index{GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}!cabeca@{cabeca}}
+\index{cabeca@{cabeca}!GerenciadorMusica$<$ T $>$@{GerenciadorMusica$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cabeca}{cabeca}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structGerenciadorMusica_1_1Musica}{Musica}}$\ast$ \mbox{\hyperlink{classGerenciadorMusica}{Gerenciador\+Musica}}$<$ T $>$\+::cabeca\hspace{0.3cm}{\ttfamily [private]}}
+
+Ponteiro para a cabeça da lista encadeada de músicas. 
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{GerenciadorMusica_8h}{Gerenciador\+Musica.\+h}}\item 
+src/Gerenciador\+Musica.\+cpp\end{DoxyCompactItemize}

@@ -70,30 +70,45 @@ $(function() {
 <div class="title">Node.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NODE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define NODE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classNode.html">    4</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classNode.html">Node</a> {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    T *value;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classNode.html">Node</a>* nextNode;</div>
+<a href="Node_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef NODE_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define NODE_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    T *getValue();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> setValue(T value);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classNode.html">Node&lt;T&gt;</a>* getNext();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classNode.html">Node&lt;T&gt;</a>* setNext(<a class="code" href="classNode.html">Node&lt;T&gt;</a>* ptr);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classNode.html">Node</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classNode.html">Node</a>(T value);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classNode.html">Node</a>(T *value);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> operator== (<a class="code" href="classNode.html">Node&lt;T&gt;</a> &amp;n);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> operator!= (<a class="code" href="classNode.html">Node&lt;T&gt;</a> &amp;n);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:4</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classNode.html">   14</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classNode.html">Node</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classNode.html#a4571aa2b7f240188970552b6598c1d67">   16</a></span>&#160;    T *<a class="code" href="classNode.html#a4571aa2b7f240188970552b6598c1d67">value</a>; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classNode.html#a647504b9e0a4ca53e12dec0f7cbd2efd">   17</a></span>&#160;    <a class="code" href="classNode.html">Node</a>* <a class="code" href="classNode.html#a647504b9e0a4ca53e12dec0f7cbd2efd">nextNode</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    T *<a class="code" href="classNode.html#a219129e2eab7455a4dd0377124c83716">getValue</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNode.html#afdabc78643a5cbab194de94274fa4f8d">setValue</a>(T <a class="code" href="classNode.html#a4571aa2b7f240188970552b6598c1d67">value</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classNode.html">Node&lt;T&gt;</a>* <a class="code" href="classNode.html#a688501032615bbd05c9f42ef89d63db5">getNext</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classNode.html">Node&lt;T&gt;</a>* <a class="code" href="classNode.html#a26d7fb9ac6d1a1484418c60d73979b55">setNext</a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a>* ptr);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a>(T <a class="code" href="classNode.html#a4571aa2b7f240188970552b6598c1d67">value</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a>(T *<a class="code" href="classNode.html#a4571aa2b7f240188970552b6598c1d67">value</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classNode.html#ab7feaa3dd1f2103807cc5c43619876b3">operator== </a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> &amp;n);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classNode.html#a0d62645b9bfce4ee6a784628fb86d0e3">operator!= </a>(<a class="code" href="classNode.html">Node&lt;T&gt;</a> &amp;n);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdoc">Classe template que representa um nó de uma lista encadeada.</div><div class="ttdef"><b>Definition:</b> Node.h:14</div></div>
+<div class="ttc" id="aclassNode_html_a0ac1d44cfe588be564acf25485029bd8"><div class="ttname"><a href="classNode.html#a0ac1d44cfe588be564acf25485029bd8">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdoc">Construtor padrão da classe Node.</div><div class="ttdef"><b>Definition:</b> Node.cpp:4</div></div>
+<div class="ttc" id="aclassNode_html_a0d62645b9bfce4ee6a784628fb86d0e3"><div class="ttname"><a href="classNode.html#a0d62645b9bfce4ee6a784628fb86d0e3">Node::operator!=</a></div><div class="ttdeci">bool operator!=(Node&lt; T &gt; &amp;n)</div><div class="ttdoc">Sobrecarga do operador de diferença (!=) da classe Node.</div><div class="ttdef"><b>Definition:</b> Node.cpp:46</div></div>
+<div class="ttc" id="aclassNode_html_a219129e2eab7455a4dd0377124c83716"><div class="ttname"><a href="classNode.html#a219129e2eab7455a4dd0377124c83716">Node::getValue</a></div><div class="ttdeci">T * getValue()</div><div class="ttdoc">Retorna o valor armazenado no nó</div><div class="ttdef"><b>Definition:</b> Node.cpp:21</div></div>
+<div class="ttc" id="aclassNode_html_a26d7fb9ac6d1a1484418c60d73979b55"><div class="ttname"><a href="classNode.html#a26d7fb9ac6d1a1484418c60d73979b55">Node::setNext</a></div><div class="ttdeci">Node&lt; T &gt; * setNext(Node&lt; T &gt; *ptr)</div><div class="ttdoc">Define o próximo nó da lista.</div><div class="ttdef"><b>Definition:</b> Node.cpp:36</div></div>
+<div class="ttc" id="aclassNode_html_a4571aa2b7f240188970552b6598c1d67"><div class="ttname"><a href="classNode.html#a4571aa2b7f240188970552b6598c1d67">Node::value</a></div><div class="ttdeci">T * value</div><div class="ttdef"><b>Definition:</b> Node.h:16</div></div>
+<div class="ttc" id="aclassNode_html_a647504b9e0a4ca53e12dec0f7cbd2efd"><div class="ttname"><a href="classNode.html#a647504b9e0a4ca53e12dec0f7cbd2efd">Node::nextNode</a></div><div class="ttdeci">Node * nextNode</div><div class="ttdef"><b>Definition:</b> Node.h:17</div></div>
+<div class="ttc" id="aclassNode_html_a688501032615bbd05c9f42ef89d63db5"><div class="ttname"><a href="classNode.html#a688501032615bbd05c9f42ef89d63db5">Node::getNext</a></div><div class="ttdeci">Node&lt; T &gt; * getNext()</div><div class="ttdoc">Retorna o próximo nó da lista.</div><div class="ttdef"><b>Definition:</b> Node.cpp:26</div></div>
+<div class="ttc" id="aclassNode_html_ab7feaa3dd1f2103807cc5c43619876b3"><div class="ttname"><a href="classNode.html#ab7feaa3dd1f2103807cc5c43619876b3">Node::operator==</a></div><div class="ttdeci">bool operator==(Node&lt; T &gt; &amp;n)</div><div class="ttdoc">Sobrecarga do operador de igualdade (==) da classe Node.</div><div class="ttdef"><b>Definition:</b> Node.cpp:41</div></div>
+<div class="ttc" id="aclassNode_html_afdabc78643a5cbab194de94274fa4f8d"><div class="ttname"><a href="classNode.html#afdabc78643a5cbab194de94274fa4f8d">Node::setValue</a></div><div class="ttdeci">void setValue(T value)</div><div class="ttdoc">Define o valor armazenado no nó</div><div class="ttdef"><b>Definition:</b> Node.cpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

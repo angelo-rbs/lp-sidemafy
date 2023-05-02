@@ -70,32 +70,47 @@ $(function() {
 <div class="title">Musica.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MUSICA_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MUSICA_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classMusica.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMusica.html">Musica</a></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  std::string titulo;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  std::string nomeArtista;</div>
+<a href="Musica_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef MUSICA_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define MUSICA_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  std::string getTitulo();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> setTitulo(std::string titulo);</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classMusica.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMusica.html">Musica</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  std::string getNomeArtista();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> setNomeArtista(std::string titulo);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classMusica.html">Musica</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classMusica.html">Musica</a>(std::string titulo, std::string nomeArtista);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> operator== (<a class="code" href="classMusica.html">Musica</a> &amp;m1);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">bool</span> operator!= (<a class="code" href="classMusica.html">Musica</a> &amp;m1);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdef"><b>Definition:</b> Musica.h:5</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classMusica.html#a18a3f34e8fc4f2187c8b925a9ff01891">   17</a></span>&#160;  std::string <a class="code" href="classMusica.html#a18a3f34e8fc4f2187c8b925a9ff01891">titulo</a>; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classMusica.html#a7954027cb373c695ab372936f75e4721">   18</a></span>&#160;  std::string <a class="code" href="classMusica.html#a7954027cb373c695ab372936f75e4721">nomeArtista</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  std::string <a class="code" href="classMusica.html#a5ba8b9a429dc298867b3254d6e336f74">getTitulo</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classMusica.html#aa7ad962a29fcc02ea6a95d5b99e21503">setTitulo</a>(std::string <a class="code" href="classMusica.html#a18a3f34e8fc4f2187c8b925a9ff01891">titulo</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::string <a class="code" href="classMusica.html#af4be9291cb47a01444eeb534a587669b">getNomeArtista</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classMusica.html#a9913e690349228f1adad9dcd7544bd5e">setNomeArtista</a>(std::string <a class="code" href="classMusica.html#a7954027cb373c695ab372936f75e4721">nomeArtista</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classMusica.html#a435c4de75bd638108bf9caae58000e18">Musica</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classMusica.html#a435c4de75bd638108bf9caae58000e18">Musica</a>(std::string <a class="code" href="classMusica.html#a18a3f34e8fc4f2187c8b925a9ff01891">titulo</a>, std::string <a class="code" href="classMusica.html#a7954027cb373c695ab372936f75e4721">nomeArtista</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classMusica.html#a60e0068f7f4f92a2e0edcf37214ab7d3">operator== </a>(<a class="code" href="classMusica.html">Musica</a> &amp;m1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classMusica.html#aa2ea8e3e4824c9a1037cffbfb5b7e048">operator!= </a>(<a class="code" href="classMusica.html">Musica</a> &amp;m1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdoc">Classe que representa uma música.</div><div class="ttdef"><b>Definition:</b> Musica.h:14</div></div>
+<div class="ttc" id="aclassMusica_html_a18a3f34e8fc4f2187c8b925a9ff01891"><div class="ttname"><a href="classMusica.html#a18a3f34e8fc4f2187c8b925a9ff01891">Musica::titulo</a></div><div class="ttdeci">std::string titulo</div><div class="ttdef"><b>Definition:</b> Musica.h:17</div></div>
+<div class="ttc" id="aclassMusica_html_a435c4de75bd638108bf9caae58000e18"><div class="ttname"><a href="classMusica.html#a435c4de75bd638108bf9caae58000e18">Musica::Musica</a></div><div class="ttdeci">Musica()</div><div class="ttdoc">Construtor padrão da classe Musica.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:4</div></div>
+<div class="ttc" id="aclassMusica_html_a5ba8b9a429dc298867b3254d6e336f74"><div class="ttname"><a href="classMusica.html#a5ba8b9a429dc298867b3254d6e336f74">Musica::getTitulo</a></div><div class="ttdeci">std::string getTitulo()</div><div class="ttdoc">Obtém o título da música.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:13</div></div>
+<div class="ttc" id="aclassMusica_html_a60e0068f7f4f92a2e0edcf37214ab7d3"><div class="ttname"><a href="classMusica.html#a60e0068f7f4f92a2e0edcf37214ab7d3">Musica::operator==</a></div><div class="ttdeci">bool operator==(Musica &amp;m1)</div><div class="ttdoc">Operador de igualdade para comparar duas músicas.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:29</div></div>
+<div class="ttc" id="aclassMusica_html_a7954027cb373c695ab372936f75e4721"><div class="ttname"><a href="classMusica.html#a7954027cb373c695ab372936f75e4721">Musica::nomeArtista</a></div><div class="ttdeci">std::string nomeArtista</div><div class="ttdef"><b>Definition:</b> Musica.h:18</div></div>
+<div class="ttc" id="aclassMusica_html_a9913e690349228f1adad9dcd7544bd5e"><div class="ttname"><a href="classMusica.html#a9913e690349228f1adad9dcd7544bd5e">Musica::setNomeArtista</a></div><div class="ttdeci">void setNomeArtista(std::string nomeArtista)</div><div class="ttdoc">Define o nome do artista da música.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:25</div></div>
+<div class="ttc" id="aclassMusica_html_aa2ea8e3e4824c9a1037cffbfb5b7e048"><div class="ttname"><a href="classMusica.html#aa2ea8e3e4824c9a1037cffbfb5b7e048">Musica::operator!=</a></div><div class="ttdeci">bool operator!=(Musica &amp;m1)</div><div class="ttdoc">Operador de desigualdade para comparar duas músicas.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:33</div></div>
+<div class="ttc" id="aclassMusica_html_aa7ad962a29fcc02ea6a95d5b99e21503"><div class="ttname"><a href="classMusica.html#aa7ad962a29fcc02ea6a95d5b99e21503">Musica::setTitulo</a></div><div class="ttdeci">void setTitulo(std::string titulo)</div><div class="ttdoc">Define o título da música.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:17</div></div>
+<div class="ttc" id="aclassMusica_html_af4be9291cb47a01444eeb534a587669b"><div class="ttname"><a href="classMusica.html#af4be9291cb47a01444eeb534a587669b">Musica::getNomeArtista</a></div><div class="ttdeci">std::string getNomeArtista()</div><div class="ttdoc">Obtém o nome do artista da música.</div><div class="ttdef"><b>Definition:</b> Musica.cpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['menu_7',['Menu',['../classMenu.html',1,'']]],
-  ['musica_8',['Musica',['../structGerenciadorMusica_1_1Musica.html',1,'GerenciadorMusica&lt; T &gt;::Musica'],['../classMusica.html',1,'Musica']]]
+  ['cabeca_6',['cabeca',['../classGerenciadorMusica.html#aa0fec74ea65e9a605ef99c31cbe9cd85',1,'GerenciadorMusica::cabeca()'],['../classLinkedList.html#acf308fee1c7e89ec7ea1d96e2896cfe2',1,'LinkedList::cabeca()']]],
+  ['contains_7',['contains',['../classLinkedList.html#a48decf9b6049eb20a7577d052ac27da3',1,'LinkedList']]]
 ];

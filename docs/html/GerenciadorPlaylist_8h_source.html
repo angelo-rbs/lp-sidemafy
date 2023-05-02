@@ -70,38 +70,57 @@ $(function() {
 <div class="title">GerenciadorPlaylist.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GERENCIADORPLAYLIST_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GERENCIADORPLAYLIST_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Playlist.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;LinkedList.h&quot;</span></div>
+<a href="GerenciadorPlaylist_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef GERENCIADORPLAYLIST_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define GERENCIADORPLAYLIST_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classGerenciadorPlaylist.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classLinkedList.html">LinkedList&lt;Playlist&gt;</a> *playlists;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Playlist_8h.html">Playlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LinkedList_8h.html">LinkedList.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  ~<a class="code" href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classNode.html">Node&lt;Playlist&gt;</a> *adicionarPlaylist(<a class="code" href="classPlaylist.html">Playlist</a> *playlist);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">bool</span> removerPlaylist(std::string nomePlaylist);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classNode.html">Node&lt;Playlist&gt;</a> *encontrarPlaylist(std::string nomePlaylist);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> adicionarMusica(std::string nomePlaylist, <a class="code" href="classMusica.html">Musica</a> *musica);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">bool</span> removerMusica(std::string nomePlaylist, std::string titulo, std::string nomeArtista);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> imprimirPlaylist(std::string nomePlaylist);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> imprimirTodasPlaylists();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassGerenciadorPlaylist_html"><div class="ttname"><a href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a></div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.h:9</div></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classGerenciadorPlaylist.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classGerenciadorPlaylist.html#a21d90c39f43df5ff376e9e9a7ea32ce0">   21</a></span>&#160;  <a class="code" href="classLinkedList.html">LinkedList&lt;Playlist&gt;</a> *<a class="code" href="classGerenciadorPlaylist.html#a21d90c39f43df5ff376e9e9a7ea32ce0">playlists</a>; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classGerenciadorPlaylist.html#a98dce1f598c54c501ebb09e62bd4517c">GerenciadorPlaylist</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classGerenciadorPlaylist.html#ada95652e8a3c197ce8908703b2e9b89b">~GerenciadorPlaylist</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classNode.html">Node&lt;Playlist&gt;</a> *<a class="code" href="classGerenciadorPlaylist.html#a4ed966c9f37bd3c6ec953e574332bb4e">adicionarPlaylist</a>(<a class="code" href="classPlaylist.html">Playlist</a> *playlist);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classGerenciadorPlaylist.html#aef82c8803ce6b5a04c4a0a7ee0bd53e9">removerPlaylist</a>(std::string nomePlaylist);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classNode.html">Node&lt;Playlist&gt;</a> *<a class="code" href="classGerenciadorPlaylist.html#a3aa2b9c7129a74c0e8f6fb5fd4dc5d33">encontrarPlaylist</a>(std::string nomePlaylist);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classGerenciadorPlaylist.html#ab64c8b90a03b116dc1d373229eeb8f2f">adicionarMusica</a>(std::string nomePlaylist, <a class="code" href="classMusica.html">Musica</a> *musica);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classGerenciadorPlaylist.html#a7751ab1122c8584db696cca8f51cbe76">removerMusica</a>(std::string nomePlaylist, std::string titulo, std::string nomeArtista);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classGerenciadorPlaylist.html#ab1236e6c847ef53bda1333a08f97a813">imprimirPlaylist</a>(std::string nomePlaylist);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classGerenciadorPlaylist.html#a1128b028f3d16b3a3dccacfdeedf0e85">imprimirTodasPlaylists</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aLinkedList_8h_html"><div class="ttname"><a href="LinkedList_8h.html">LinkedList.h</a></div><div class="ttdoc">Definição da classe LinkedList para implementação de uma lista encadeada.</div></div>
+<div class="ttc" id="aPlaylist_8h_html"><div class="ttname"><a href="Playlist_8h.html">Playlist.h</a></div><div class="ttdoc">Arquivo cabeçalho da classe Playlist.</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html"><div class="ttname"><a href="classGerenciadorPlaylist.html">GerenciadorPlaylist</a></div><div class="ttdoc">Classe responsável por gerenciar as playlists.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.h:18</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a1128b028f3d16b3a3dccacfdeedf0e85"><div class="ttname"><a href="classGerenciadorPlaylist.html#a1128b028f3d16b3a3dccacfdeedf0e85">GerenciadorPlaylist::imprimirTodasPlaylists</a></div><div class="ttdeci">void imprimirTodasPlaylists()</div><div class="ttdoc">Imprime os dados de todas as playlists.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:56</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a21d90c39f43df5ff376e9e9a7ea32ce0"><div class="ttname"><a href="classGerenciadorPlaylist.html#a21d90c39f43df5ff376e9e9a7ea32ce0">GerenciadorPlaylist::playlists</a></div><div class="ttdeci">LinkedList&lt; Playlist &gt; * playlists</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.h:21</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a3aa2b9c7129a74c0e8f6fb5fd4dc5d33"><div class="ttname"><a href="classGerenciadorPlaylist.html#a3aa2b9c7129a74c0e8f6fb5fd4dc5d33">GerenciadorPlaylist::encontrarPlaylist</a></div><div class="ttdeci">Node&lt; Playlist &gt; * encontrarPlaylist(std::string nomePlaylist)</div><div class="ttdoc">Encontra uma playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:25</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a4ed966c9f37bd3c6ec953e574332bb4e"><div class="ttname"><a href="classGerenciadorPlaylist.html#a4ed966c9f37bd3c6ec953e574332bb4e">GerenciadorPlaylist::adicionarPlaylist</a></div><div class="ttdeci">Node&lt; Playlist &gt; * adicionarPlaylist(Playlist *playlist)</div><div class="ttdoc">Adiciona uma nova playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:11</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a7751ab1122c8584db696cca8f51cbe76"><div class="ttname"><a href="classGerenciadorPlaylist.html#a7751ab1122c8584db696cca8f51cbe76">GerenciadorPlaylist::removerMusica</a></div><div class="ttdeci">bool removerMusica(std::string nomePlaylist, std::string titulo, std::string nomeArtista)</div><div class="ttdoc">Remove uma música de uma playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:41</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_a98dce1f598c54c501ebb09e62bd4517c"><div class="ttname"><a href="classGerenciadorPlaylist.html#a98dce1f598c54c501ebb09e62bd4517c">GerenciadorPlaylist::GerenciadorPlaylist</a></div><div class="ttdeci">GerenciadorPlaylist()</div><div class="ttdoc">Construtor padrão da classe GerenciadorPlaylist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:3</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_ab1236e6c847ef53bda1333a08f97a813"><div class="ttname"><a href="classGerenciadorPlaylist.html#ab1236e6c847ef53bda1333a08f97a813">GerenciadorPlaylist::imprimirPlaylist</a></div><div class="ttdeci">void imprimirPlaylist(std::string nomePlaylist)</div><div class="ttdoc">Imprime os dados de uma playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:47</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_ab64c8b90a03b116dc1d373229eeb8f2f"><div class="ttname"><a href="classGerenciadorPlaylist.html#ab64c8b90a03b116dc1d373229eeb8f2f">GerenciadorPlaylist::adicionarMusica</a></div><div class="ttdeci">bool adicionarMusica(std::string nomePlaylist, Musica *musica)</div><div class="ttdoc">Adiciona uma música a uma playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:34</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_ada95652e8a3c197ce8908703b2e9b89b"><div class="ttname"><a href="classGerenciadorPlaylist.html#ada95652e8a3c197ce8908703b2e9b89b">GerenciadorPlaylist::~GerenciadorPlaylist</a></div><div class="ttdeci">~GerenciadorPlaylist()</div><div class="ttdoc">Destrutor da classe GerenciadorPlaylist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:7</div></div>
+<div class="ttc" id="aclassGerenciadorPlaylist_html_aef82c8803ce6b5a04c4a0a7ee0bd53e9"><div class="ttname"><a href="classGerenciadorPlaylist.html#aef82c8803ce6b5a04c4a0a7ee0bd53e9">GerenciadorPlaylist::removerPlaylist</a></div><div class="ttdeci">bool removerPlaylist(std::string nomePlaylist)</div><div class="ttdoc">Remove uma playlist.</div><div class="ttdef"><b>Definition:</b> GerenciadorPlaylist.cpp:15</div></div>
 <div class="ttc" id="aclassLinkedList_html"><div class="ttname"><a href="classLinkedList.html">LinkedList&lt; Playlist &gt;</a></div></div>
-<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdef"><b>Definition:</b> Musica.h:5</div></div>
-<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:4</div></div>
-<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdef"><b>Definition:</b> Playlist.h:6</div></div>
+<div class="ttc" id="aclassMusica_html"><div class="ttname"><a href="classMusica.html">Musica</a></div><div class="ttdoc">Classe que representa uma música.</div><div class="ttdef"><b>Definition:</b> Musica.h:14</div></div>
+<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdoc">Classe template que representa um nó de uma lista encadeada.</div><div class="ttdef"><b>Definition:</b> Node.h:14</div></div>
+<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdoc">Classe que representa uma playlist de músicas.</div><div class="ttdef"><b>Definition:</b> Playlist.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

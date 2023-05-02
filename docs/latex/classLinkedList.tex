@@ -1,83 +1,426 @@
 \hypertarget{classLinkedList}{}\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Classe Linked\+List$<$ T $>$}
 \label{classLinkedList}\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+
+
+Classe que define uma lista encadeada.  
+
+
+
+
+{\ttfamily \#include $<$Linked\+List.\+h$>$}
+
 \doxysubsection*{Membros Públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classLinkedList_a0749e66ac368832309baa707a5456e31}\label{classLinkedList_a0749e66ac368832309baa707a5456e31}} 
-{\bfseries Linked\+List} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$cabeca)
-\item 
-\mbox{\Hypertarget{classLinkedList_a5e06db42fa995a0ee2fa7c349e637604}\label{classLinkedList_a5e06db42fa995a0ee2fa7c349e637604}} 
-{\bfseries Linked\+List} (T valor)
-\item 
+\mbox{\Hypertarget{classLinkedList_a3c20fcfec867e867f541061a09fc640c}\label{classLinkedList_a3c20fcfec867e867f541061a09fc640c}} 
+\mbox{\hyperlink{classLinkedList_a3c20fcfec867e867f541061a09fc640c}{Linked\+List}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \mbox{\hyperlink{classLinkedList}{Linked\+List}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinkedList_a0749e66ac368832309baa707a5456e31}{Linked\+List}} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$\mbox{\hyperlink{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}{cabeca}})
+\begin{DoxyCompactList}\small\item\em Construtor que inicializa a lista com um nó cabeça dado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinkedList_a5e06db42fa995a0ee2fa7c349e637604}{Linked\+List}} (T valor)
+\begin{DoxyCompactList}\small\item\em Construtor que inicializa a lista com um valor dado. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLinkedList_a74877574a8026df7b516f4f28c627402}\label{classLinkedList_a74877574a8026df7b516f4f28c627402}} 
-void {\bfseries printar} ()
-\item 
-\mbox{\Hypertarget{classLinkedList_a36cfdea83c77bd53630fd925976a7922}\label{classLinkedList_a36cfdea83c77bd53630fd925976a7922}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries inserir} (size\+\_\+t pos, T $\ast$valor)
-\item 
-\mbox{\Hypertarget{classLinkedList_a22d8361acd20c489bf4e8169de5997f3}\label{classLinkedList_a22d8361acd20c489bf4e8169de5997f3}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries inserir} (size\+\_\+t pos, T valor\+Ptr)
-\item 
-\mbox{\Hypertarget{classLinkedList_ac39ee6660f854c5a992aff0a28348988}\label{classLinkedList_ac39ee6660f854c5a992aff0a28348988}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries anexar} (T valor)
-\item 
-\mbox{\Hypertarget{classLinkedList_aa58122a5a02464008cb77b4724ccc277}\label{classLinkedList_aa58122a5a02464008cb77b4724ccc277}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries anexar} (T $\ast$valor\+Ptr)
-\item 
-\mbox{\Hypertarget{classLinkedList_a8a7e0bd4d1995073e617dc14dcc290df}\label{classLinkedList_a8a7e0bd4d1995073e617dc14dcc290df}} 
-bool {\bfseries deletar} (size\+\_\+t pos)
-\item 
-\mbox{\Hypertarget{classLinkedList_a3e56c330012fee6b49877700a54805e0}\label{classLinkedList_a3e56c330012fee6b49877700a54805e0}} 
-int {\bfseries encontrar} (T valor)
-\item 
-\mbox{\Hypertarget{classLinkedList_a661973d4dcfdcbd8152bb8f213b80313}\label{classLinkedList_a661973d4dcfdcbd8152bb8f213b80313}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries acessar} (size\+\_\+t pos)
-\item 
-\mbox{\Hypertarget{classLinkedList_a99850c60b2976cbf7bd826d08c0b3db1}\label{classLinkedList_a99850c60b2976cbf7bd826d08c0b3db1}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries get\+Cabeca} ()
-\item 
-\mbox{\Hypertarget{classLinkedList_a84fbf4f1656aa7714124278df7c67918}\label{classLinkedList_a84fbf4f1656aa7714124278df7c67918}} 
-void {\bfseries set\+Cabeca} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$cabeca)
-\item 
-\mbox{\Hypertarget{classLinkedList_ae1ceeca2d6c0facfa7a177d5f3862534}\label{classLinkedList_ae1ceeca2d6c0facfa7a177d5f3862534}} 
-size\+\_\+t {\bfseries get\+Tamanho} ()
-\item 
-\mbox{\Hypertarget{classLinkedList_a48decf9b6049eb20a7577d052ac27da3}\label{classLinkedList_a48decf9b6049eb20a7577d052ac27da3}} 
-bool {\bfseries contains} (T valor)
-\item 
-\mbox{\Hypertarget{classLinkedList_ae531797725e9e98dec63af36bb8731d5}\label{classLinkedList_ae531797725e9e98dec63af36bb8731d5}} 
-bool {\bfseries remove} (T valor)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classLinkedList_a74877574a8026df7b516f4f28c627402}{printar}} ()
+\begin{DoxyCompactList}\small\item\em Imprime a lista encadeada na saída padrão. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_a36cfdea83c77bd53630fd925976a7922}{inserir}} (size\+\_\+t pos, T $\ast$valor)
+\begin{DoxyCompactList}\small\item\em Insere um valor na lista encadeada em uma determinada posição. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_a22d8361acd20c489bf4e8169de5997f3}{inserir}} (size\+\_\+t pos, T valor\+Ptr)
+\begin{DoxyCompactList}\small\item\em Insere um novo valor na posição especificada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_ac39ee6660f854c5a992aff0a28348988}{anexar}} (T valor)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo valor no final da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_aa58122a5a02464008cb77b4724ccc277}{anexar}} (T $\ast$valor\+Ptr)
+\begin{DoxyCompactList}\small\item\em Adiciona um novo valor no final da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLinkedList_a8a7e0bd4d1995073e617dc14dcc290df}{deletar}} (size\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em Remove um valor da lista. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLinkedList_a3e56c330012fee6b49877700a54805e0}{encontrar}} (T valor)
+\begin{DoxyCompactList}\small\item\em Procura um valor na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_a661973d4dcfdcbd8152bb8f213b80313}{acessar}} (size\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em Acessa o nó da lista na posição especificada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_a99850c60b2976cbf7bd826d08c0b3db1}{get\+Cabeca}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a cabeça da lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLinkedList_a84fbf4f1656aa7714124278df7c67918}{set\+Cabeca}} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$\mbox{\hyperlink{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}{cabeca}})
+\begin{DoxyCompactList}\small\item\em Define o nó cabeça da lista. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classLinkedList_ae1ceeca2d6c0facfa7a177d5f3862534}{get\+Tamanho}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLinkedList_a48decf9b6049eb20a7577d052ac27da3}{contains}} (T valor)
+\begin{DoxyCompactList}\small\item\em Verifica se a lista contém um valor específico. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLinkedList_ae531797725e9e98dec63af36bb8731d5}{remove}} (T valor)
+\begin{DoxyCompactList}\small\item\em Remove um valor da lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membros Privados}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classLinkedList_a33400fd2b775573a1bfaabf2662051ab}\label{classLinkedList_a33400fd2b775573a1bfaabf2662051ab}} 
-void {\bfseries incrementar\+Tamanho} ()
-\item 
+void \mbox{\hyperlink{classLinkedList_a33400fd2b775573a1bfaabf2662051ab}{incrementar\+Tamanho}} ()
+\begin{DoxyCompactList}\small\item\em Incrementa o tamanho da lista. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLinkedList_ae81353ff7616ca66c20bc368c68648ae}\label{classLinkedList_ae81353ff7616ca66c20bc368c68648ae}} 
-void {\bfseries decrementar\+Tamanho} ()
-\item 
-\mbox{\Hypertarget{classLinkedList_ae7e273313359647b277fac7332b2e24f}\label{classLinkedList_ae7e273313359647b277fac7332b2e24f}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries avanca\+Posicoes} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ptr, int quant\+Pos)
-\item 
-\mbox{\Hypertarget{classLinkedList_af25ffe4434886b831c85f3379b5f753e}\label{classLinkedList_af25ffe4434886b831c85f3379b5f753e}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries wrapped\+\_\+inserir} (size\+\_\+t pos, T $\ast$valor)
-\item 
-\mbox{\Hypertarget{classLinkedList_a30cf91cbf6619eae0ae8ac0f6f438dff}\label{classLinkedList_a30cf91cbf6619eae0ae8ac0f6f438dff}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries wrapped\+\_\+inserir} (size\+\_\+t pos, T valor)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classLinkedList_ae81353ff7616ca66c20bc368c68648ae}{decrementar\+Tamanho}} ()
+\begin{DoxyCompactList}\small\item\em Decrementa o tamanho da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_ae7e273313359647b277fac7332b2e24f}{avanca\+Posicoes}} (\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ptr, int quant\+Pos)
+\begin{DoxyCompactList}\small\item\em Avança uma quantidade de posições na lista a partir de um nó dado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_af25ffe4434886b831c85f3379b5f753e}{wrapped\+\_\+inserir}} (size\+\_\+t pos, T $\ast$valor)
+\begin{DoxyCompactList}\small\item\em Insere um valor na lista encadeada em uma determinada posição. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_a30cf91cbf6619eae0ae8ac0f6f438dff}{wrapped\+\_\+inserir}} (size\+\_\+t pos, T valor)
+\begin{DoxyCompactList}\small\item\em Insere um valor na lista encadeada em uma determinada posição. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}\label{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}} 
-\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ {\bfseries cabeca}
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}{cabeca}}
 \item 
-\mbox{\Hypertarget{classLinkedList_ab3dda64105ad50e2f227b9bd990c6cf6}\label{classLinkedList_ab3dda64105ad50e2f227b9bd990c6cf6}} 
-size\+\_\+t {\bfseries tamanho}
+size\+\_\+t \mbox{\hyperlink{classLinkedList_ab3dda64105ad50e2f227b9bd990c6cf6}{tamanho}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename T$>$\newline
+class Linked\+List$<$ T $>$}
+
+Classe que define uma lista encadeada. 
+
+
+\begin{DoxyTemplParams}{Parâmetros do $<$em$>$template$<$/em$>$}
+{\em T} & Tipo de dado armazenado na lista encadeada. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{classLinkedList_a0749e66ac368832309baa707a5456e31}\label{classLinkedList_a0749e66ac368832309baa707a5456e31}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!LinkedList@{LinkedList}}
+\index{LinkedList@{LinkedList}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LinkedList()}{LinkedList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedList}{Linked\+List}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$}]{cabeca }\end{DoxyParamCaption})}
+
+
+
+Construtor que inicializa a lista com um nó cabeça dado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cabeca} & Nó cabeça da lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinkedList_a5e06db42fa995a0ee2fa7c349e637604}\label{classLinkedList_a5e06db42fa995a0ee2fa7c349e637604}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!LinkedList@{LinkedList}}
+\index{LinkedList@{LinkedList}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LinkedList()}{LinkedList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::\mbox{\hyperlink{classLinkedList}{Linked\+List}} (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Construtor que inicializa a lista com um valor dado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor que será o primeiro elemento da lista. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{classLinkedList_a661973d4dcfdcbd8152bb8f213b80313}\label{classLinkedList_a661973d4dcfdcbd8152bb8f213b80313}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!acessar@{acessar}}
+\index{acessar@{acessar}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{acessar()}{acessar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::acessar (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+Acessa o nó da lista na posição especificada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição do nó que será acessado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó na posição especificada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_aa58122a5a02464008cb77b4724ccc277}\label{classLinkedList_aa58122a5a02464008cb77b4724ccc277}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!anexar@{anexar}}
+\index{anexar@{anexar}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{anexar()}{anexar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::anexar (\begin{DoxyParamCaption}\item[{T $\ast$}]{valor\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo valor no final da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor\+Ptr} & Ponteiro para o valor que será adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó recém-\/adicionado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_ac39ee6660f854c5a992aff0a28348988}\label{classLinkedList_ac39ee6660f854c5a992aff0a28348988}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!anexar@{anexar}}
+\index{anexar@{anexar}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{anexar()}{anexar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::anexar (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Adiciona um novo valor no final da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor que será adicionado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó recém-\/adicionado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_ae7e273313359647b277fac7332b2e24f}\label{classLinkedList_ae7e273313359647b277fac7332b2e24f}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!avancaPosicoes@{avancaPosicoes}}
+\index{avancaPosicoes@{avancaPosicoes}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{avancaPosicoes()}{avancaPosicoes()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::avanca\+Posicoes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$}]{ptr,  }\item[{int}]{quant\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Avança uma quantidade de posições na lista a partir de um nó dado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em ptr} & Nó a partir do qual a lista será percorrida. \\
+\hline
+{\em quant\+Pos} & Quantidade de posições a serem avançadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó que se encontra na posição desejada. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a48decf9b6049eb20a7577d052ac27da3}\label{classLinkedList_a48decf9b6049eb20a7577d052ac27da3}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Verifica se a lista contém um valor específico. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor que será procurado na lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true se a lista contém o valor, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a8a7e0bd4d1995073e617dc14dcc290df}\label{classLinkedList_a8a7e0bd4d1995073e617dc14dcc290df}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!deletar@{deletar}}
+\index{deletar@{deletar}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deletar()}{deletar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::deletar (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+Remove um valor da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição do valor que será removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true se o valor foi removido com sucesso, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a3e56c330012fee6b49877700a54805e0}\label{classLinkedList_a3e56c330012fee6b49877700a54805e0}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!encontrar@{encontrar}}
+\index{encontrar@{encontrar}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{encontrar()}{encontrar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::encontrar (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Procura um valor na lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor que será procurado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Posição do valor na lista ou -\/1 se não for encontrado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a99850c60b2976cbf7bd826d08c0b3db1}\label{classLinkedList_a99850c60b2976cbf7bd826d08c0b3db1}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!getCabeca@{getCabeca}}
+\index{getCabeca@{getCabeca}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCabeca()}{getCabeca()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::get\+Cabeca}
+
+
+
+Retorna a cabeça da lista. 
+
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó cabeça da lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_ae1ceeca2d6c0facfa7a177d5f3862534}\label{classLinkedList_ae1ceeca2d6c0facfa7a177d5f3862534}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!getTamanho@{getTamanho}}
+\index{getTamanho@{getTamanho}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getTamanho()}{getTamanho()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::get\+Tamanho}
+
+
+
+Retorna o tamanho da lista. 
+
+\begin{DoxyReturn}{Retorna}
+Tamanho da lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a36cfdea83c77bd53630fd925976a7922}\label{classLinkedList_a36cfdea83c77bd53630fd925976a7922}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!inserir@{inserir}}
+\index{inserir@{inserir}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inserir()}{inserir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::inserir (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{T $\ast$}]{valor }\end{DoxyParamCaption})}
+
+
+
+Insere um valor na lista encadeada em uma determinada posição. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição em que o valor será inserido. \\
+\hline
+{\em valor} & Ponteiro para o valor que será inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó que contém o valor recém inserido. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a22d8361acd20c489bf4e8169de5997f3}\label{classLinkedList_a22d8361acd20c489bf4e8169de5997f3}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!inserir@{inserir}}
+\index{inserir@{inserir}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{inserir()}{inserir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::inserir (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{T}]{valor\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Insere um novo valor na posição especificada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição onde o valor será inserido. \\
+\hline
+{\em valor\+Ptr} & Ponteiro para o valor que será inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó recém-\/inserido. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_ae531797725e9e98dec63af36bb8731d5}\label{classLinkedList_ae531797725e9e98dec63af36bb8731d5}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+
+
+
+Remove um valor da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor que será removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true se o valor foi removido com sucesso, false caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a84fbf4f1656aa7714124278df7c67918}\label{classLinkedList_a84fbf4f1656aa7714124278df7c67918}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!setCabeca@{setCabeca}}
+\index{setCabeca@{setCabeca}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setCabeca()}{setCabeca()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::set\+Cabeca (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$}]{cabeca }\end{DoxyParamCaption})}
+
+
+
+Define o nó cabeça da lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cabeca} & Ponteiro para o nó cabeça da lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinkedList_af25ffe4434886b831c85f3379b5f753e}\label{classLinkedList_af25ffe4434886b831c85f3379b5f753e}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!wrapped\_inserir@{wrapped\_inserir}}
+\index{wrapped\_inserir@{wrapped\_inserir}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{wrapped\_inserir()}{wrapped\_inserir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::wrapped\+\_\+inserir (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{T $\ast$}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Insere um valor na lista encadeada em uma determinada posição. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição em que o valor será inserido. \\
+\hline
+{\em valor} & Ponteiro para o valor que será inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó que contém o valor recém inserido. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinkedList_a30cf91cbf6619eae0ae8ac0f6f438dff}\label{classLinkedList_a30cf91cbf6619eae0ae8ac0f6f438dff}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!wrapped\_inserir@{wrapped\_inserir}}
+\index{wrapped\_inserir@{wrapped\_inserir}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{wrapped\_inserir()}{wrapped\_inserir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::wrapped\+\_\+inserir (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{T}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Insere um valor na lista encadeada em uma determinada posição. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pos} & Posição em que o valor será inserido. \\
+\hline
+{\em valor} & Valor que será inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o nó que contém o valor recém inserido. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}\label{classLinkedList_acf308fee1c7e89ec7ea1d96e2896cfe2}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!cabeca@{cabeca}}
+\index{cabeca@{cabeca}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cabeca}{cabeca}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classNode}{Node}}$<$T$>$$\ast$ \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::cabeca\hspace{0.3cm}{\ttfamily [private]}}
+
+Nó cabeça da lista. \mbox{\Hypertarget{classLinkedList_ab3dda64105ad50e2f227b9bd990c6cf6}\label{classLinkedList_ab3dda64105ad50e2f227b9bd990c6cf6}} 
+\index{LinkedList$<$ T $>$@{LinkedList$<$ T $>$}!tamanho@{tamanho}}
+\index{tamanho@{tamanho}!LinkedList$<$ T $>$@{LinkedList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tamanho}{tamanho}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classLinkedList}{Linked\+List}}$<$ T $>$\+::tamanho\hspace{0.3cm}{\ttfamily [private]}}
+
+Tamanho atual da lista. 
+
 A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Linked\+List.\+h\item 
+include/\mbox{\hyperlink{LinkedList_8h}{Linked\+List.\+h}}\item 
 src/Linked\+List.\+cpp\end{DoxyCompactItemize}
