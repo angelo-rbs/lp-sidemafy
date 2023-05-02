@@ -3,6 +3,7 @@
 
 #include <string>
 #include "LinkedList.h"
+#include "Musica.h"
 
 class GerenciadorMusica {
 public:
