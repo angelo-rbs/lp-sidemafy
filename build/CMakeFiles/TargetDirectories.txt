@@ -1,0 +1,3 @@
+/home/willemromao/Downloads/programming/lp-sidemafy/build/CMakeFiles/program.dir
+/home/willemromao/Downloads/programming/lp-sidemafy/build/CMakeFiles/edit_cache.dir
+/home/willemromao/Downloads/programming/lp-sidemafy/build/CMakeFiles/rebuild_cache.dir

@@ -20,10 +20,10 @@ private:
         Musica* prox;
     };
 
-    Musica* cabeca;
-
     Musica* buscarMusica(const std::string& nome);
     void removerMusicaDePlaylists(const std::string& nome);
+
+    Musica* cabeca;
 };
 
 #endif

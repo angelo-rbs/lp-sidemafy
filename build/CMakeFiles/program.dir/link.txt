@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wall CMakeFiles/program.dir/main.cpp.o CMakeFiles/program.dir/src/GerenciadorMusica.cpp.o CMakeFiles/program.dir/src/GerenciadorPlaylist.cpp.o CMakeFiles/program.dir/src/LinkedList.cpp.o CMakeFiles/program.dir/src/Menu.cpp.o CMakeFiles/program.dir/src/Musica.cpp.o CMakeFiles/program.dir/src/Node.cpp.o CMakeFiles/program.dir/src/Playlist.cpp.o -o program 
