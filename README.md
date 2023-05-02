@@ -1,6 +1,6 @@
 # Gerenciador de Músicas - SidemaFy
 
-### Autores
+## Autores
 
 - ANGELO RAPHAEL CAMPELO
 - FRANCISCO WILLEM ROMÃO MOREIRA 
