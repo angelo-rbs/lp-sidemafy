@@ -72,10 +72,6 @@ std::ostream& operator<<(std::ostream &out, Playlist &pl) {
   return out;
 }
 
-/*
-código grosso aqui
-*/
-
 std::string Playlist::getNome() {
   return this->nome;
 }
