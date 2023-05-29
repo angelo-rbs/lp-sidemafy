@@ -1,9 +1,15 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "include/LinkedList.h"
 
 int main() {
   
-  LinkedList<int> *lista = new LinkedList<int>();
+  LinkedList<int> *list = new LinkedList<int>();
+
+  list->append(1);
+  list->append(2);
+  list->append(3);
+
+  list->print();
 
   return 0;
 }
