@@ -175,7 +175,7 @@ public:
 
     int pos = 0;
     Node<T>* node = this->head;
-    while (node != nullptr && *(node->getValue()) != value) {
+    while (node != nullptr && node->getValue() != value) {
       node = node->getNext();
       ++pos;
     }
