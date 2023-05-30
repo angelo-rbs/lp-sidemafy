@@ -12,20 +12,14 @@ int main() {
   list->append(5);
   list->append(6);
 
+  list->drop();
+  list->drop();
+  list->drop();
+
+  Node<int> *node = list->drop();
+
   list->print();
-  list->remove(0);
-  list->print();
-
-  // std::cout << "ficou com tamanho " << list->getSize() << std::endl;
-
-  // Node<int> *node;
-
-  // node = list->drop();
-
-  //list->print();
-  
-  //std::cout << node->getValue() << std::endl;
-
+  std::cout << node->getValue() << std::endl;
   
 
   return 0;

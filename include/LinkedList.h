@@ -227,6 +227,8 @@ public:
 
     delete it->getNext();
     it->setNext(next);
+
+    this->decreaseSize();
   }
 
   bool remove(LinkedList<T>& toBeRemoved) {
@@ -251,22 +253,12 @@ public:
 
   Node<T>* drop() {
 
-    this->print();
+    if (this->getSize() == 0) return nullptr;
 
-    if (this->getSize() > 0) {
-
-      std::cout << "o tamanho antes é " << this->getSize() << std::endl;
-      Node<T>* node = this->access(this->getSize() - 1);
-      bool removeu = this->remove((size_t)this->getSize() - 1);
-
-      std::cout << "o tamanho depois é " << this->getSize() << std::endl;
-      std::cout << "removeu: " << removeu << std::endl;
-
-      //this->print();
-      return node;
-    }
-
-    return nullptr;
+    Node<T> *dropped = new Node( *(this->access(this->getSize() - 1)) );
+    
+    this->remove(this->getSize() - 1);
+    return dropped;
   }
 
   int find(T value) {
@@ -328,10 +320,10 @@ public:
 
 };
 
-// template <typename T>
-// void operator>>(const LinkedList<T>& list, const Node<T>& node) {
-//   node = list.drop();
-// }
+template <typename T>
+void operator>>(const LinkedList<T>& list, const Node<T>& node) {
+  node = list.drop();
+}
 
 
 #endif
