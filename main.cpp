@@ -12,22 +12,21 @@ int main() {
   list->append(5);
   list->append(6);
 
-  LinkedList<int> *copyOfList = new LinkedList<int>(*list);
-
-
-  std::cout << "a lista original é ";
   list->print();
-  std::cout << "de endereço " << list << std::endl;
+  list->remove(0);
+  list->print();
 
-  std::cout << std::endl;
+  // std::cout << "ficou com tamanho " << list->getSize() << std::endl;
 
-  std::cout << "a lista copiada com 0 no final é ";
-  copyOfList->append(0);
-  copyOfList->print();
-  std::cout << "de endereço " << copyOfList << std::endl;
+  // Node<int> *node;
 
+  // node = list->drop();
 
-  std::cout << "os endereços são diferentes: " << (copyOfList != list) << std::endl;
+  //list->print();
+  
+  //std::cout << node->getValue() << std::endl;
+
+  
 
   return 0;
 }

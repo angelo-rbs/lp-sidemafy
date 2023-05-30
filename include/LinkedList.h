@@ -9,7 +9,7 @@ template <typename T>
 class LinkedList {
 
 private:
-  Node<T> *head;
+  Node<T>* head;
   size_t size;
 
 public:
@@ -31,15 +31,37 @@ public:
     this->size = 1;
   }
 
-  LinkedList(LinkedList<T> &toCopy) {
-    
-    Node<T> *it = toCopy.getHead();
+  LinkedList(LinkedList<T>& toCopy) {
+
+    Node<T>* it = toCopy.getHead();
     this->size = 0;
 
     while (it != nullptr) {
       this->append(it->getValue());
       it = it->getNext();
     }
+  }
+
+  // métodos de acesso 
+
+  Node<T>* getHead() {
+    return this->head;
+  }
+
+  void setHead(Node<T>* head) {
+    this->head = head;
+  }
+
+  size_t getSize() {
+    return this->size;
+  }
+
+  void increaseSize() {
+    ++(this->size);
+  }
+
+  void decreaseSize() {
+    --(this->size);
   }
 
   // funcionalidades
@@ -62,10 +84,13 @@ public:
   Node<T>* avancaPosicoes(Node<T>* ptr, int quantPos) {
     Node<T>* it = ptr;
 
-    while (ptr != nullptr && quantPos-- > 0)
+    if (quantPos > this->getSize() - 1)
+      it = nullptr;
+
+    while (quantPos-- > 0 && it != nullptr)
       it = it->getNext();
 
-    return (it != nullptr) ? it : nullptr;
+    return it;
   }
 
   Node<T>* insert(size_t pos, T* valorPtr) {
@@ -161,9 +186,9 @@ public:
     return (response) ? response : nullptr;
   }
 
-  Node<T>* append(LinkedList<T> &toAppend) {
+  Node<T>* append(LinkedList<T>& toAppend) {
 
-    Node<T> *it = toAppend.getHead();
+    Node<T>* it = toAppend.getHead();
 
     while (it != nullptr) {
       this->append(it->getValue());
@@ -173,39 +198,47 @@ public:
     return it;
   }
 
-  bool remove(size_t pos) {
+  void remove(size_t pos) {
     if (pos >= this->getSize())
-      throw std::out_of_range("Posição fora do intervalo");
+      throw std::out_of_range("Posição de remoção fora do intervalo");
 
-    try {
-      Node<T>* prev = this->avancaPosicoes(this->getHead(), pos - 1);
-      Node<T>* toBeDeleted = this->avancaPosicoes(prev, 1);
-      Node<T>* next;
 
-      if (toBeDeleted->getNext() != nullptr) {
-        next = this->avancaPosicoes(toBeDeleted, 1);
-        prev->setNext(next);
-      }
-
-      delete toBeDeleted;
-    }
-    catch (std::exception& e) {
-      return false;
+    if (this->getHead() == nullptr)
+      return;
+  
+    
+    Node<T> *it = this->getHead(); 
+    
+    if (pos == 0) {
+      this->setHead(it->getNext());
+      delete it;
+      return;
     }
 
-    return true;
+
+    for (int i = 0; it != nullptr && i < pos - 1; i++)
+      it = it->getNext();
+
+    if (it == nullptr || it->getNext() == nullptr)
+      return;
+
+    
+    Node<T> *next = it->getNext()->getNext();
+
+    delete it->getNext();
+    it->setNext(next);
   }
 
-  bool remove(LinkedList<T> &toBeRemoved) {
+  bool remove(LinkedList<T>& toBeRemoved) {
 
-    Node<T> *it = toBeRemoved.getHead();
+    Node<T>* it = toBeRemoved.getHead();
     bool removedAll = true;
 
     while (it != nullptr) {
 
       int positionToRemove = this->find(it->getValue());
 
-      if (positionToRemove != -1) 
+      if (positionToRemove != -1)
         this->remove(positionToRemove);
       else
         removedAll = false;
@@ -214,6 +247,26 @@ public:
     }
 
     return removedAll;
+  }
+
+  Node<T>* drop() {
+
+    this->print();
+
+    if (this->getSize() > 0) {
+
+      std::cout << "o tamanho antes é " << this->getSize() << std::endl;
+      Node<T>* node = this->access(this->getSize() - 1);
+      bool removeu = this->remove((size_t)this->getSize() - 1);
+
+      std::cout << "o tamanho depois é " << this->getSize() << std::endl;
+      std::cout << "removeu: " << removeu << std::endl;
+
+      //this->print();
+      return node;
+    }
+
+    return nullptr;
   }
 
   int find(T value) {
@@ -251,13 +304,13 @@ public:
     return node;
   }
 
-  // operadores
+  // sobrescrita de operadores
 
-  LinkedList<T>* operator+(LinkedList<T> toAppend) {
+  LinkedList<T>* operator+(const LinkedList<T> toAppend) {
 
-    LinkedList<T> *list = new LinkedList();
+    LinkedList<T>* list = new LinkedList();
 
-    Node<T> *it = this->getHead();
+    Node<T>* it = this->getHead();
     while (it != nullptr) {
       list->append(it->getValue());
       it = it->getNext();
@@ -273,28 +326,12 @@ public:
     return list;
   }
 
-  // métodos de acesso 
-
-  Node<T>* getHead() {
-    return this->head;
-  }
-
-  void setHead(Node<T>* head) {
-    this->head = head;
-  }
-
-  size_t getSize() {
-    return this->size;
-  }
-
-  void increaseSize() {
-    ++(this->size);
-  }
-
-  void decreaseSize() {
-    --(this->size);
-  }
 };
+
+// template <typename T>
+// void operator>>(const LinkedList<T>& list, const Node<T>& node) {
+//   node = list.drop();
+// }
 
 
 #endif
