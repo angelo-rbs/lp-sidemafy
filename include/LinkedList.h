@@ -14,6 +14,8 @@ private:
 
 public:
 
+  // construtores
+
   LinkedList() {
     this->head = nullptr;
     this->size = 0;
@@ -30,6 +32,7 @@ public:
   }
 
 
+  // funcionalidades
 
   void print() {
 
@@ -148,12 +151,24 @@ public:
     return (response) ? response : nullptr;
   }
 
-  bool deletePos(size_t pos) {
+  Node<T>* append(LinkedList<T> &toAppend) {
+
+    Node<T> *it = toAppend.getHead();
+
+    while (it != nullptr) {
+      this->append(it->getValue());
+      it = it->getNext();
+    }
+
+    return it;
+  }
+
+  bool remove(size_t pos) {
     if (pos >= this->getSize())
       throw std::out_of_range("Posição fora do intervalo");
 
     try {
-      Node<T>* prev = this->avancaPosicoes(this->gethead(), pos - 1);
+      Node<T>* prev = this->avancaPosicoes(this->getHead(), pos - 1);
       Node<T>* toBeDeleted = this->avancaPosicoes(prev, 1);
       Node<T>* next;
 
@@ -169,6 +184,26 @@ public:
     }
 
     return true;
+  }
+
+  bool remove(LinkedList<T> &toBeRemoved) {
+
+    Node<T> *it = toBeRemoved.getHead();
+    bool removedAll = true;
+
+    while (it != nullptr) {
+
+      int positionToRemove = this->find(it->getValue());
+
+      if (positionToRemove != -1) 
+        this->remove(positionToRemove);
+      else
+        removedAll = false;
+
+      it = it->getNext();
+    }
+
+    return removedAll;
   }
 
   int find(T value) {
@@ -206,7 +241,29 @@ public:
     return node;
   }
 
+  // operadores
 
+  LinkedList<T>* operator+(LinkedList<T> toAppend) {
+
+    LinkedList<T> *list = new LinkedList();
+
+    Node<T> *it = this->getHead();
+    while (it != nullptr) {
+      list->append(it->getValue());
+      it = it->getNext();
+    }
+
+    it = toAppend.getHead();
+    while (it != nullptr) {
+      list->append(it->getValue());
+      it = it->getNext();
+    }
+
+    delete it;
+    return list;
+  }
+
+  // métodos de acesso 
 
   Node<T>* getHead() {
     return this->head;
