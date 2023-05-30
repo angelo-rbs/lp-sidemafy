@@ -31,6 +31,16 @@ public:
     this->size = 1;
   }
 
+  LinkedList(LinkedList<T> &toCopy) {
+    
+    Node<T> *it = toCopy.getHead();
+    this->size = 0;
+
+    while (it != nullptr) {
+      this->append(it->getValue());
+      it = it->getNext();
+    }
+  }
 
   // funcionalidades
 

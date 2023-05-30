@@ -12,16 +12,22 @@ int main() {
   list->append(5);
   list->append(6);
 
-  LinkedList<int> *toRemove = new LinkedList<int>();
+  LinkedList<int> *copyOfList = new LinkedList<int>(*list);
 
-  toRemove->append(2);
-  toRemove->append(5);
-  toRemove->append(0);
 
-  bool removeuTodos = list->remove(*toRemove);
-
-  std::cout << "removeu todos: " << removeuTodos << std::endl;
+  std::cout << "a lista original é ";
   list->print();
+  std::cout << "de endereço " << list << std::endl;
+
+  std::cout << std::endl;
+
+  std::cout << "a lista copiada com 0 no final é ";
+  copyOfList->append(0);
+  copyOfList->print();
+  std::cout << "de endereço " << copyOfList << std::endl;
+
+
+  std::cout << "os endereços são diferentes: " << (copyOfList != list) << std::endl;
 
   return 0;
 }
