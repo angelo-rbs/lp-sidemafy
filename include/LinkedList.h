@@ -6,73 +6,86 @@
 #include "Node.h"
 
 template <typename T>
-class LinkedList {
+class LinkedList
+{
 
 private:
-  Node<T>* head;
+  Node<T> *head;
   size_t size;
 
 public:
-
   // construtores
 
-  LinkedList() {
+  LinkedList()
+  {
     this->head = nullptr;
     this->size = 0;
   }
 
-  LinkedList(Node<T>* head) {
+  LinkedList(Node<T> *head)
+  {
     this->head = head;
     this->size = 1;
   }
 
-  LinkedList(T valor) {
+  LinkedList(T valor)
+  {
     this->head = new Node(valor);
     this->size = 1;
   }
 
-  LinkedList(LinkedList<T>& toCopy) {
+  LinkedList(LinkedList<T> &toCopy)
+  {
 
-    Node<T>* it = toCopy.getHead();
+    Node<T> *it = toCopy.getHead();
     this->size = 0;
 
-    while (it != nullptr) {
+    while (it != nullptr)
+    {
       this->append(it->getValue());
       it = it->getNext();
     }
   }
 
-  // métodos de acesso 
+  // métodos de acesso
 
-  Node<T>* getHead() {
+  Node<T> *getHead()
+  {
     return this->head;
   }
 
-  void setHead(Node<T>* head) {
+  void setHead(Node<T> *head)
+  {
     this->head = head;
   }
 
-  size_t getSize() {
+  size_t getSize()
+  {
     return this->size;
   }
 
-  void increaseSize() {
+  void increaseSize()
+  {
     ++(this->size);
   }
 
-  void decreaseSize() {
+  void decreaseSize()
+  {
     --(this->size);
   }
 
   // funcionalidades
 
-  void print() {
+  void print()
+  {
 
     std::cout << "[ ";
 
-    if (this->head != nullptr) {
-      Node<T>* it = this->head;
-      while (it != nullptr) {
+    if (this->head != nullptr)
+    {
+      Node<T> *it = this->head;
+      while (it != nullptr)
+      {
         std::cout << it->getValue() << " ";
         it = it->getNext();
       }
@@ -81,8 +94,9 @@ public:
     std::cout << "]" << std::endl;
   }
 
-  Node<T>* avancaPosicoes(Node<T>* ptr, int quantPos) {
-    Node<T>* it = ptr;
+  Node<T> *avancaPosicoes(Node<T> *ptr, int quantPos)
+  {
+    Node<T> *it = ptr;
 
     if (quantPos > this->getSize() - 1)
       it = nullptr;
@@ -93,14 +107,17 @@ public:
     return it;
   }
 
-  Node<T>* insert(size_t pos, T* valorPtr) {
-    if (pos > this->getSize()) {
+  Node<T> *insert(size_t pos, T *valorPtr)
+  {
+    if (pos > this->getSize())
+    {
       throw std::out_of_range("Posição inválida");
     }
 
-    Node<T>* node = wrappedInsert(pos, valorPtr);
+    Node<T> *node = wrappedInsert(pos, valorPtr);
 
-    if (node) {
+    if (node)
+    {
       this->increaseSize();
       return node;
     }
@@ -108,14 +125,17 @@ public:
       return nullptr;
   }
 
-  Node<T>* insert(size_t pos, T valor) {
-    if (pos > this->getSize()) {
+  Node<T> *insert(size_t pos, T valor)
+  {
+    if (pos > this->getSize())
+    {
       throw std::out_of_range("Posição inválida");
     }
 
-    Node<T>* node = wrappedInsert(pos, valor);
+    Node<T> *node = wrappedInsert(pos, valor);
 
-    if (node) {
+    if (node)
+    {
       this->increaseSize();
       return node;
     }
@@ -123,21 +143,24 @@ public:
       return nullptr;
   }
 
-  Node<T>* wrappedInsert(size_t pos, T* valor) {
+  Node<T> *wrappedInsert(size_t pos, T *valor)
+  {
 
     if (pos > this->size)
       throw new std::out_of_range("Tentativa de inserção em posição inválida");
-    Node<T>* it = this->head, * nodeAnterior, * newNode = new Node(valor);
+    Node<T> *it = this->head, *nodeAnterior, *newNode = new Node(valor);
 
     if (this->size == 0)
       this->head = newNode;
 
-    else if (pos == size) {
+    else if (pos == size)
+    {
 
       it = this->avancaPosicoes(it, pos - 1);
       it->setNext(newNode);
     }
-    else {
+    else
+    {
 
       while (--pos)
         it = it->getNext();
@@ -151,10 +174,12 @@ public:
     return newNode;
   }
 
-  Node<T>* wrappedInsert(size_t pos, T valor) {
-    Node<T>* it = nullptr, * prev;
+  Node<T> *wrappedInsert(size_t pos, T valor)
+  {
+    Node<T> *it = nullptr, *prev;
 
-    if (this->head != nullptr) {
+    if (this->head != nullptr)
+    {
       it = this->head;
       it = this->avancaPosicoes(it, pos - 1);
     }
@@ -163,7 +188,8 @@ public:
 
     if (it->getNext() == nullptr) // se chegou na extremidade
       return it->setNext(new Node(valor));
-    else {
+    else
+    {
       prev = it;
       it = this->avancaPosicoes(it, 1);
 
@@ -174,23 +200,27 @@ public:
     }
   }
 
-  Node<T>* append(T valor) {
-    Node<T>* response = this->insert(this->getSize(), valor);
+  Node<T> *append(T valor)
+  {
+    Node<T> *response = this->insert(this->getSize(), valor);
 
     return (response) ? response : nullptr;
   }
 
-  Node<T>* append(T* valorPtr) {
-    Node<T>* response = this->insert(this->getSize(), valorPtr);
+  Node<T> *append(T *valorPtr)
+  {
+    Node<T> *response = this->insert(this->getSize(), valorPtr);
 
     return (response) ? response : nullptr;
   }
 
-  Node<T>* append(LinkedList<T>& toAppend) {
+  Node<T> *append(LinkedList<T> &toAppend)
+  {
 
-    Node<T>* it = toAppend.getHead();
+    Node<T> *it = toAppend.getHead();
 
-    while (it != nullptr) {
+    while (it != nullptr)
+    {
       this->append(it->getValue());
       it = it->getNext();
     }
@@ -198,31 +228,29 @@ public:
     return it;
   }
 
-  void remove(size_t pos) {
+  void remove(size_t pos)
+  {
     if (pos >= this->getSize())
       throw std::out_of_range("Posição de remoção fora do intervalo");
 
-
     if (this->getHead() == nullptr)
       return;
-  
-    
-    Node<T> *it = this->getHead(); 
-    
-    if (pos == 0) {
+
+    Node<T> *it = this->getHead();
+
+    if (pos == 0)
+    {
       this->setHead(it->getNext());
       delete it;
       return;
     }
 
-
     for (int i = 0; it != nullptr && i < pos - 1; i++)
-      it = it->getNext();
+      it = it->getNext(); // it aponta para (pos - 1)-ésimo nó
 
-    if (it == nullptr || it->getNext() == nullptr)
+    if (it == nullptr || it->getNext() == nullptr) //
       return;
 
-    
     Node<T> *next = it->getNext()->getNext();
 
     delete it->getNext();
@@ -231,12 +259,14 @@ public:
     this->decreaseSize();
   }
 
-  bool remove(LinkedList<T>& toBeRemoved) {
+  bool remove(LinkedList<T> &toBeRemoved)
+  {
 
-    Node<T>* it = toBeRemoved.getHead();
+    Node<T> *it = toBeRemoved.getHead();
     bool removedAll = true;
 
-    while (it != nullptr) {
+    while (it != nullptr)
+    {
 
       int positionToRemove = this->find(it->getValue());
 
@@ -251,21 +281,25 @@ public:
     return removedAll;
   }
 
-  Node<T>* drop() {
+  Node<T> *drop()
+  {
 
-    if (this->getSize() == 0) return nullptr;
+    if (this->getSize() == 0)
+      return nullptr;
 
-    Node<T> *dropped = new Node( *(this->access(this->getSize() - 1)) );
-    
+    Node<T> *dropped = new Node(*(this->access(this->getSize() - 1)));
+
     this->remove(this->getSize() - 1);
     return dropped;
   }
 
-  int find(T value) {
+  int find(T value)
+  {
 
     int pos = 0;
-    Node<T>* node = this->head;
-    while (node != nullptr && node->getValue() != value) {
+    Node<T> *node = this->head;
+    while (node != nullptr && node->getValue() != value)
+    {
       node = node->getNext();
       ++pos;
     }
@@ -273,11 +307,13 @@ public:
     return (node == nullptr) ? -1 : pos;
   }
 
-  int find(T* valuePtr) {
+  int find(T *valuePtr)
+  {
 
     int pos = 0;
-    Node<T>* node = this->head;
-    while (node != nullptr && *(node->getValue()) != *valuePtr) {
+    Node<T> *node = this->head;
+    while (node != nullptr && *(node->getValue()) != *valuePtr)
+    {
       node = node->getNext();
       ++pos;
     }
@@ -285,12 +321,13 @@ public:
     return (node == nullptr) ? -1 : pos;
   }
 
-  Node<T>* access(size_t pos) {
+  Node<T> *access(size_t pos)
+  {
 
     if (pos > this->size - 1)
       throw new std::out_of_range("Tentativa de acesso a posição inválida");
 
-    Node<T>* node = this->head;
+    Node<T> *node = this->head;
     node = this->avancaPosicoes(node, pos);
 
     return node;
@@ -298,18 +335,21 @@ public:
 
   // sobrescrita de operadores
 
-  LinkedList<T>* operator+(const LinkedList<T> toAppend) {
+  LinkedList<T> *operator+(const LinkedList<T> toAppend)
+  {
 
-    LinkedList<T>* list = new LinkedList();
+    LinkedList<T> *list = new LinkedList();
 
-    Node<T>* it = this->getHead();
-    while (it != nullptr) {
+    Node<T> *it = this->getHead();
+    while (it != nullptr)
+    {
       list->append(it->getValue());
       it = it->getNext();
     }
 
     it = toAppend.getHead();
-    while (it != nullptr) {
+    while (it != nullptr)
+    {
       list->append(it->getValue());
       it = it->getNext();
     }
@@ -317,13 +357,18 @@ public:
     delete it;
     return list;
   }
-
 };
 
 template <typename T>
-void operator>>(const LinkedList<T>& list, const Node<T>& node) {
+void operator>>(LinkedList<T> &list, Node<T> &node)
+{
   node = list.drop();
 }
 
+template <typename T>
+void operator<<(LinkedList<T> &list, Node<T> &node)
+{
+  list.append(node.getValue());
+}
 
 #endif
