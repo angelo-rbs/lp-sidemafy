@@ -10,11 +10,11 @@
 
 class Playlist {
 
-  private:
-    LinkedList<Music> *musics;
-    std::string name;
+private:
+  LinkedList<Music>* musics;
+  std::string name;
 
-  public:
+public:
 
   Playlist() {
     this->name = "";
@@ -42,7 +42,7 @@ class Playlist {
     }
   }
 
-  Playlist(Playlist &listToCopy) {
+  Playlist(Playlist& listToCopy) {
     this->name = listToCopy.getName();
     this->musics = new LinkedList<Music>(*listToCopy.getMusics());
   }
@@ -97,7 +97,7 @@ class Playlist {
 
   void add(Playlist* list) {
 
-    Node<Music> *it = list->getMusics()->getHead();
+    Node<Music>* it = list->getMusics()->getHead();
 
     while (it != nullptr) {
 
@@ -107,14 +107,14 @@ class Playlist {
       if (searchResult == NOT_FOUND) {
         add(it->getValue());
       }
-      
+
       it = it->getNext();
     }
   }
 
   bool remove(std::string title, std::string artistName) {
 
-    Music *music = new Music(title, artistName);
+    Music* music = new Music(title, artistName);
     int position = musics->find(music);
     delete music;
     int found = (position != -1);
@@ -123,38 +123,53 @@ class Playlist {
       this->musics->remove(position);
       return true;
     }
-    
+
     return false;
   }
 
 
-  int remove(Playlist *list) {
+  int remove(Playlist* list) {
     return this->getMusics()->remove(list->getMusics());
+  }
+
+
+  Playlist* operator+ (Playlist &list) {
+
+    Playlist* toReturn = new Playlist();
+
+    toReturn->add(this);
+    toReturn->add(&list);
+
+    toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
+
+
+    return toReturn;
   }
 
 };
 
-
 std::ostream& operator<<(std::ostream& out, Playlist& pl) {
 
-    int size = pl.getMusics()->getSize();
-    Music music;
+  int size = pl.getMusics()->getSize();
+  Music music;
 
-    out << "========================================" << std::endl;
+  out << "========================================" << std::endl;
 
-    if (pl.getName() == "") out << "[Playlist sem name]" << std::endl;
-    else out << pl.getName() << std::endl;
+  if (pl.getName() == "") out << "[Playlist sem name]" << std::endl;
+  else out << pl.getName() << std::endl;
 
-    out << "========================================" << std::endl;
+  out << "========================================" << std::endl;
 
-    for (int i = 0; i < size; i++) {
-      music = pl.getMusics()->access(i)->getValue();
-      out << (i + 1) << " - " << music.getArtistName() << ", " << music.getTitle() << std::endl;
-    }
-
-    out << "========================================" << std::endl;
-
-    return out;
+  for (int i = 0; i < size; i++) {
+    music = pl.getMusics()->access(i)->getValue();
+    out << (i + 1) << " - " << music.getArtistName() << ", " << music.getTitle() << std::endl;
   }
 
-  #endif
+  out << "========================================" << std::endl;
+
+  return out;
+}
+
+
+
+#endif
