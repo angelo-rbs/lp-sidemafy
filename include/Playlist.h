@@ -21,6 +21,11 @@ class Playlist {
     this->musics = new LinkedList<Music>();
   }
 
+  Playlist(std::string name) {
+    this->name = name;
+    this->musics = new LinkedList<Music>();
+  }
+
   Playlist(std::string name, LinkedList<Music>* lista) {
     this->name = name;
     this->musics = lista;
@@ -37,6 +42,11 @@ class Playlist {
     }
   }
 
+  Playlist(Playlist &listToCopy) {
+    this->name = listToCopy.getName();
+    this->musics = new LinkedList<Music>(*listToCopy.getMusics());
+  }
+
   void print() {
 
     Node<Music>* head = this->getMusics()->getHead();
@@ -49,8 +59,6 @@ class Playlist {
     else std::cout << "[Playlist vazia]" << std::endl;
 
     std::cout << "========================================" << std::endl;
-
-    delete head;
   }
 
   void printWrapped(Node<Music>* node, int pos) {
@@ -118,6 +126,12 @@ class Playlist {
     
     return false;
   }
+
+
+  int remove(Playlist *list) {
+    return this->getMusics()->remove(list->getMusics());
+  }
+
 };
 
 

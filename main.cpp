@@ -5,7 +5,7 @@
 int main()
 {
 
-  Playlist *list = new Playlist();
+  Playlist *list = new Playlist("Playlist teste");
 
   list->add(new Music("Control", "Frusciante"));
   list->add(new Music("Dark necessities", "RHCP"));
@@ -16,10 +16,19 @@ int main()
   toAdd->add(new Music("Life of pablo", "KW"));
   toAdd->add(new Music("Brazil", "Mcleena"));
 
+  Playlist *toRemove = new Playlist();
+
+  toRemove->add(new Music("Life of pablo", "KW"));
+
 
   list->add(toAdd);
   list->print();
 
+  std::cout << "\no resultado após remover eh " << std::endl;
+
+  int removidas = list->remove(toRemove);
+  list->print();
+  std::cout << "e conseguiu remover " << removidas << " músicas" << std::endl;
 
   return 0;
 }
