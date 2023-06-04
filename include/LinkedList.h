@@ -360,13 +360,13 @@ public:
 };
 
 template <typename T>
-void operator>>(const LinkedList<T> &list, const Node<T> &node)
+void operator>>(LinkedList<T> &list, Node<T> &node)
 {
   node = list.drop();
 }
 
 template <typename T>
-void operator<<(LinkedList<T> &list, const Node<T> &node)
+void operator<<(LinkedList<T> &list, Node<T> &node)
 {
   list.append(node.getValue());
 }

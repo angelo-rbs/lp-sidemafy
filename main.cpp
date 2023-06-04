@@ -1,8 +1,9 @@
 #include <iostream>
 #include "include/LinkedList.h"
 
-int main() {
-  
+int main()
+{
+
   LinkedList<int> *list = new LinkedList<int>();
 
   list->append(1);
@@ -20,7 +21,16 @@ int main() {
 
   list->print();
   std::cout << node->getValue() << std::endl;
-  
+
+  Node<int> *node2;
+
+  *list >> *node2;
+
+  list->print();
+
+  *list << *node2;
+
+  list->print();
 
   return 0;
 }
