@@ -312,7 +312,7 @@ public:
 
     int pos = 0;
     Node<T> *node = this->head;
-    while (node != nullptr && *(node->getValue()) != *valuePtr)
+    while (node != nullptr && (node->getValue()) != *valuePtr)
     {
       node = node->getNext();
       ++pos;

@@ -1,5 +1,6 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
+#define NOT_FOUND -1
 
 
 #include "LinkedList.h"
@@ -78,25 +79,45 @@ class Playlist {
     this->name = name;
   }
 
-  Node<Music>* addMusic(Music* Music) {
-    return (this->musics->append(Music));
+  Node<Music>* add(Music* music) {
+    return (this->musics->append(music));
   }
 
-  bool removeMusic(std::string title, std::string artistName) {
+  Node<Music>* add(Music music) {
+    return (this->musics->append(music));
+  }
+
+  void add(Playlist* list) {
+
+    Node<Music> *it = list->getMusics()->getHead();
+
+    while (it != nullptr) {
+
+      Music songToBeAdd = it->getValue();
+      int searchResult = getMusics()->find(songToBeAdd);
+
+      if (searchResult == NOT_FOUND) {
+        add(it->getValue());
+      }
+      
+      it = it->getNext();
+    }
+  }
+
+  bool remove(std::string title, std::string artistName) {
 
     Music *music = new Music(title, artistName);
     int position = musics->find(music);
-    int found = (position != -1);
-    bool deleted = false;
-
-    if (found)
-      deleted = this->musics->deletePos(position);
-    
     delete music;
-    return deleted;
+    int found = (position != -1);
+
+    if (found) {
+      this->musics->remove(position);
+      return true;
+    }
+    
+    return false;
   }
-
-
 };
 
 

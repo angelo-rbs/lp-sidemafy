@@ -1,36 +1,25 @@
 #include <iostream>
 #include "include/LinkedList.h"
+#include "include/Playlist.h"
 
 int main()
 {
 
-  LinkedList<int> *list = new LinkedList<int>();
+  Playlist *list = new Playlist();
 
-  list->append(1);
-  list->append(2);
-  list->append(3);
-  list->append(4);
-  list->append(5);
-  list->append(6);
+  list->add(new Music("Control", "Frusciante"));
+  list->add(new Music("Dark necessities", "RHCP"));
+  list->add(new Music("Muito romântico", "Roberto Carlos"));
 
-  list->drop();
-  list->drop();
-  list->drop();
+  Playlist *toAdd = new Playlist();
 
-  Node<int> *node = list->drop();
+  toAdd->add(new Music("Life of pablo", "KW"));
+  toAdd->add(new Music("Brazil", "Mcleena"));
 
-  list->print();
-  std::cout << node->getValue() << std::endl;
 
-  Node<int> *node2;
-
-  *list >> *node2;
-
+  list->add(toAdd);
   list->print();
 
-  *list << *node2;
-
-  list->print();
 
   return 0;
 }
