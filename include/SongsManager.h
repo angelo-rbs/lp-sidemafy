@@ -74,6 +74,9 @@ public:
     int pos = songs->find(music);
     if (pos == -1) throw std::invalid_argument("música não encontrada no gerenciador. tente novamente.");
 
+
+    // TEM QUE REMOVER DE TODAS AS PLAYLISTS TAMBÉM
+
     return songs->remove(pos);
   }
 
