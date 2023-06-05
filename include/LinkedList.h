@@ -229,6 +229,22 @@ public:
     return it;
   }
 
+  bool replace(T value, int pos)
+  {
+
+    if (remove(pos))
+      return (insert(pos, value) != nullptr);
+  }
+
+  bool replace(T *value, int pos)
+  {
+
+    if (remove(pos))
+      return (insert(pos, *value) != nullptr);
+
+    return false;
+  }
+
   bool remove(size_t pos)
   {
     if (pos >= this->getSize())
@@ -273,7 +289,7 @@ public:
 
       int positionToRemove = this->find(it->getValue());
 
-      if (positionToRemove != -1) 
+      if (positionToRemove != -1)
         amountRemoved += remove(positionToRemove);
 
       it = it->getNext();
@@ -281,7 +297,6 @@ public:
 
     return amountRemoved;
   }
-
 
   Node<T> *drop()
   {
