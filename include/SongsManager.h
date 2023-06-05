@@ -24,7 +24,11 @@ public:
   }
 
   SongsManager(Playlist& pl) {
-    songs = pl.getMusics();
+    songs = new LinkedList(*(pl.getMusics()));
+  }
+
+  SongsManager(LinkedList<Music>& list) {
+    songs = new LinkedList(list);
   }
 
   // getters e setters
