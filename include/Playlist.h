@@ -155,6 +155,24 @@ public:
     return toReturn;
   }
 
+  Playlist* operator-(Playlist &listToRemove) {
+
+    Playlist *toReturn = new Playlist(*this);
+    toReturn->setName("");
+
+    toReturn->remove(&listToRemove);
+    return toReturn;
+  }
+
+  Playlist* operator-(Music &music) {
+
+    Playlist* toReturn = new Playlist(*this);
+    toReturn->remove(music.getTitle(), music.getArtistName());
+    toReturn->setName("");
+
+    return toReturn;
+  }
+
 };
 
 std::ostream& operator<<(std::ostream& out, Playlist& pl) {
