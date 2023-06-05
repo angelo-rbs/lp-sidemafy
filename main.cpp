@@ -18,9 +18,13 @@ int main()
   listB->add(new Music("Muito romântico", "Roberto Carlos"));
 
   
-  Music *musicaTeste = new Music("asa branca", "luiz gonzaga");
+  Music *musicaTeste = new Music("asndlaksd", "dba,sdaskl");
+
+  std::cout << "antes de remover eh " << std::endl;
+  listA->print();
+  std::cout << std::endl;
   
-  Playlist *listaTeste = *listA + *musicaTeste;
+  Playlist *listaTeste = *listA - *musicaTeste;
   listaTeste->print();
 
   return 0;
