@@ -149,52 +149,49 @@ public:
     return this->getMusics()->remove(list->getMusics());
   }
 
-  Playlist *operator+(Playlist &list){
+  Playlist *operator+(Playlist &list)
+  {
 
-      Playlist * operator+(Playlist &list){
+    Playlist *toReturn = new Playlist();
 
-                     Playlist *toReturn = new Playlist();
+    toReturn->add(this);
+    toReturn->add(&list);
 
-  toReturn->add(this);
-  toReturn->add(&list);
+    toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
 
-  toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
+    return toReturn;
+  }
 
-  return toReturn;
-}
+  Playlist *operator+(Music &music)
+  {
 
-Playlist *
-operator+(Music &music)
-{
+    Playlist *toReturn = new Playlist(*this);
+    toReturn->setName("");
+    toReturn->add(music);
 
-  Playlist *toReturn = new Playlist(*this);
-  toReturn->setName("");
-  toReturn->add(music);
+    return toReturn;
+  }
 
-  return toReturn;
-}
+  Playlist *operator-(Playlist &listToRemove)
+  {
 
-Playlist *operator-(Playlist &listToRemove)
-{
+    Playlist *toReturn = new Playlist(*this);
+    toReturn->setName("");
 
-  Playlist *toReturn = new Playlist(*this);
-  toReturn->setName("");
+    toReturn->remove(&listToRemove);
+    return toReturn;
+  }
 
-  toReturn->remove(&listToRemove);
-  return toReturn;
-}
+  Playlist *operator-(Music &music)
+  {
 
-Playlist *operator-(Music &music)
-{
+    Playlist *toReturn = new Playlist(*this);
+    toReturn->remove(music.getTitle(), music.getArtistName());
+    toReturn->setName("");
 
-  Playlist *toReturn = new Playlist(*this);
-  toReturn->remove(music.getTitle(), music.getArtistName());
-  toReturn->setName("");
-
-  return toReturn;
-}
-}
-;
+    return toReturn;
+  }
+};
 
 std::ostream &operator<<(std::ostream &out, Playlist &pl)
 {
@@ -220,6 +217,26 @@ std::ostream &operator<<(std::ostream &out, Playlist &pl)
   out << "========================================" << std::endl;
 
   return out;
+}
+
+void operator<<(Playlist &pl, Music &music)
+{
+  pl.add(music);
+}
+
+void operator>>(Playlist &pl, Music &music)
+{
+  if (pl.getMusics()->getSize() > 0)
+  {
+    music = pl.getMusics()->access(pl.getMusics()->getSize() - 1)->getValue();
+    pl.remove(music.getTitle(), music.getArtistName());
+  }
+  else
+  {
+    music.setArtistName("");
+    music.setTitle("");
+    // &music = nullptr;
+  }
 }
 
 #endif

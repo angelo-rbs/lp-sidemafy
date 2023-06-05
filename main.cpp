@@ -26,5 +26,24 @@ int main()
   Playlist *listaTeste = *listA - *musicaTeste;
   listaTeste->print();
 
+  Music *teste = new Music("Melhor Só", "Igor BZ");
+
+  *listA << *teste;
+
+  listA->print();
+
+  *listA >> teste;
+
+  listA->print();
+
+  Playlist *listC = new Playlist("Playlist C");
+
+  *listC >> teste;
+
+  if (teste == nullptr)
+  {
+    std::cout << "teste eh nulo" << std::endl;
+  }
+
   return 0;
 }
