@@ -140,7 +140,6 @@ public:
     return musics->find(song);
   }
 
-
   Playlist* operator+(Playlist &list) {
 
     Playlist* toReturn = new Playlist();
@@ -179,6 +178,25 @@ public:
     toReturn->setName("");
 
     return toReturn;
+  }
+
+  bool operator==(Playlist &pl) {
+    
+    bool equals = true;
+    Node<Music> *it = pl.getMusics()->getHead();
+    
+    while (it != nullptr) {
+      Music song = it->getValue();
+      if ( musics->find(song) == NOT_FOUND ) 
+        return false;
+      it = it->getNext();
+    }
+  
+    return true;
+  }
+
+  bool operator!=(Playlist &pl) {
+    return !(*this == pl);
   }
 
 };
