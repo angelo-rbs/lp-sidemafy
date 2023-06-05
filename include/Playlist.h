@@ -44,7 +44,7 @@ public:
 
   Playlist(Playlist& listToCopy) {
     this->name = listToCopy.getName();
-    this->musics = new LinkedList<Music>(*listToCopy.getMusics());
+    this->musics = new LinkedList<Music>( *(listToCopy.getMusics()) );
   }
 
   void print() {
@@ -133,7 +133,7 @@ public:
   }
 
 
-  Playlist* operator+ (Playlist &list) {
+  Playlist* operator+(Playlist &list) {
 
     Playlist* toReturn = new Playlist();
 
@@ -142,6 +142,15 @@ public:
 
     toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
 
+
+    return toReturn;
+  }
+
+  Playlist* operator+(Music &music) {
+
+    Playlist *toReturn = new Playlist(*this);
+    toReturn->setName("");
+    toReturn->add(music);
 
     return toReturn;
   }
@@ -155,7 +164,7 @@ std::ostream& operator<<(std::ostream& out, Playlist& pl) {
 
   out << "========================================" << std::endl;
 
-  if (pl.getName() == "") out << "[Playlist sem name]" << std::endl;
+  if (pl.getName() == "") out << "[Playlist sem nome]" << std::endl;
   else out << pl.getName() << std::endl;
 
   out << "========================================" << std::endl;

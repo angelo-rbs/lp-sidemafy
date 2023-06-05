@@ -17,15 +17,11 @@ int main()
   listB->add(new Music("Brazil", "Mcleena"));
   listB->add(new Music("Muito romântico", "Roberto Carlos"));
 
-  Playlist *result = *listA + *listB;
-  result->print();
-
-
-  std::cout << "\n\na primeira playlist é " << std::endl;
-  listA->print();
-
-  std::cout << "\n\na segunda playlist é " << std::endl;
-  listB->print();
+  
+  Music *musicaTeste = new Music("asa branca", "luiz gonzaga");
+  
+  Playlist *listaTeste = *listA + *musicaTeste;
+  listaTeste->print();
 
   return 0;
 }
