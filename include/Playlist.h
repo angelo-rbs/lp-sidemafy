@@ -127,9 +127,17 @@ public:
     return false;
   }
 
+  bool remove(Music *music) {
+    return remove(music->getTitle(), music->getArtistName());
+  }
+
 
   int remove(Playlist* list) {
     return this->getMusics()->remove(list->getMusics());
+  }
+
+  int find(Music* song) {
+    return musics->find(song);
   }
 
 
