@@ -193,4 +193,14 @@ std::ostream &operator<<(std::ostream &out, Playlist &pl)
   return out;
 }
 
+void operator<<(Playlist &pl, Music &music)
+{
+  pl.add(music);
+}
+
+void operator>>(Playlist &pl, Music &music)
+{
+  pl.remove(music.getTitle(), music.getArtistName());
+}
+
 #endif
