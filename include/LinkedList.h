@@ -39,10 +39,11 @@ public:
 
     Node<T> *it = toCopy.getHead();
     this->size = 0;
+    this->head = nullptr;
 
     while (it != nullptr)
     {
-      this->append(it->getValue());
+      append(it->getValue());
       it = it->getNext();
     }
   }

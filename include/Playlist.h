@@ -48,7 +48,7 @@ public:
   Playlist(Playlist &listToCopy)
   {
     this->name = listToCopy.getName();
-    this->musics = new LinkedList<Music>(*listToCopy.getMusics());
+    this->musics = new LinkedList<Music>(*(listToCopy.getMusics()));
   }
 
   void print()
@@ -149,19 +149,52 @@ public:
     return this->getMusics()->remove(list->getMusics());
   }
 
-  Playlist *operator+(Playlist &list)
-  {
+  Playlist *operator+(Playlist &list){
 
-    Playlist *toReturn = new Playlist();
+      Playlist * operator+(Playlist &list){
 
-    toReturn->add(this);
-    toReturn->add(&list);
+                     Playlist *toReturn = new Playlist();
 
-    toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
+  toReturn->add(this);
+  toReturn->add(&list);
 
-    return toReturn;
-  }
-};
+  toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
+
+  return toReturn;
+}
+
+Playlist *
+operator+(Music &music)
+{
+
+  Playlist *toReturn = new Playlist(*this);
+  toReturn->setName("");
+  toReturn->add(music);
+
+  return toReturn;
+}
+
+Playlist *operator-(Playlist &listToRemove)
+{
+
+  Playlist *toReturn = new Playlist(*this);
+  toReturn->setName("");
+
+  toReturn->remove(&listToRemove);
+  return toReturn;
+}
+
+Playlist *operator-(Music &music)
+{
+
+  Playlist *toReturn = new Playlist(*this);
+  toReturn->remove(music.getTitle(), music.getArtistName());
+  toReturn->setName("");
+
+  return toReturn;
+}
+}
+;
 
 std::ostream &operator<<(std::ostream &out, Playlist &pl)
 {
@@ -172,7 +205,7 @@ std::ostream &operator<<(std::ostream &out, Playlist &pl)
   out << "========================================" << std::endl;
 
   if (pl.getName() == "")
-    out << "[Playlist sem name]" << std::endl;
+    out << "[Playlist sem nome]" << std::endl;
   else
     out << pl.getName() << std::endl;
 
@@ -187,16 +220,6 @@ std::ostream &operator<<(std::ostream &out, Playlist &pl)
   out << "========================================" << std::endl;
 
   return out;
-}
-
-void operator<<(Playlist &pl, Music &music)
-{
-  pl.add(music);
-}
-
-void operator>>(Playlist &pl, Music &music)
-{
-  pl.remove(music.getTitle(), music.getArtistName());
 }
 
 #endif
