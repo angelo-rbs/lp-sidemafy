@@ -127,11 +127,18 @@ public:
     return false;
   }
 
+  bool remove(Music *music) {
+    return remove(music->getTitle(), music->getArtistName());
+  }
+
 
   int remove(Playlist* list) {
     return this->getMusics()->remove(list->getMusics());
   }
 
+  int find(Music* song) {
+    return musics->find(song);
+  }
 
   Playlist* operator+(Playlist &list) {
 
@@ -171,6 +178,25 @@ public:
     toReturn->setName("");
 
     return toReturn;
+  }
+
+  bool operator==(Playlist &pl) {
+    
+    bool equals = true;
+    Node<Music> *it = pl.getMusics()->getHead();
+    
+    while (it != nullptr) {
+      Music song = it->getValue();
+      if ( musics->find(song) == NOT_FOUND ) 
+        return false;
+      it = it->getNext();
+    }
+  
+    return true;
+  }
+
+  bool operator!=(Playlist &pl) {
+    return !(*this == pl);
   }
 
 };
