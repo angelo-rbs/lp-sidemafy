@@ -1,5 +1,6 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
+#define NOT_FOUND -1
 
 #include "LinkedList.h"
 #include "Node.h"
@@ -12,10 +13,20 @@ private:
   LinkedList<Music> *musics;
   std::string name;
 
+private:
+  LinkedList<Music> *musics;
+  std::string name;
+
 public:
   Playlist()
   {
     this->name = "";
+    this->musics = new LinkedList<Music>();
+  }
+
+  Playlist(std::string name)
+  {
+    this->name = name;
     this->musics = new LinkedList<Music>();
   }
 
@@ -38,6 +49,12 @@ public:
     }
   }
 
+  Playlist(Playlist &listToCopy)
+  {
+    this->name = listToCopy.getName();
+    this->musics = new LinkedList<Music>(*listToCopy.getMusics());
+  }
+
   void print()
   {
 
@@ -53,8 +70,6 @@ public:
       std::cout << "[Playlist vazia]" << std::endl;
 
     std::cout << "========================================" << std::endl;
-
-    delete head;
   }
 
   void printWrapped(Node<Music> *node, int pos)
@@ -86,24 +101,69 @@ public:
     this->name = name;
   }
 
-  Node<Music> *addMusic(Music *Music)
+  Node<Music> *add(Music *music)
   {
-    return (this->musics->append(Music));
+    return (this->musics->append(music));
   }
 
-  bool removeMusic(std::string title, std::string artistName)
+  Node<Music> *add(Music music)
+  {
+    return (this->musics->append(music));
+  }
+
+  void add(Playlist *list)
+  {
+
+    Node<Music> *it = list->getMusics()->getHead();
+
+    while (it != nullptr)
+    {
+
+      Music songToBeAdd = it->getValue();
+      int searchResult = getMusics()->find(songToBeAdd);
+
+      if (searchResult == NOT_FOUND)
+      {
+        add(it->getValue());
+      }
+
+      it = it->getNext();
+    }
+  }
+
+  bool remove(std::string title, std::string artistName)
   {
 
     Music *music = new Music(title, artistName);
     int position = musics->find(music);
+    delete music;
     int found = (position != -1);
-    bool deleted = false;
 
     if (found)
-      deleted = this->musics->deletePos(position);
+    {
+      this->musics->remove(position);
+      return true;
+    }
 
-    delete music;
-    return deleted;
+    return false;
+  }
+
+  int remove(Playlist *list)
+  {
+    return this->getMusics()->remove(list->getMusics());
+  }
+
+  Playlist *operator+(Playlist &list)
+  {
+
+    Playlist *toReturn = new Playlist();
+
+    toReturn->add(this);
+    toReturn->add(&list);
+
+    toReturn->setName("União de \"" + this->getName() + "\" e \"" + list.getName() + "\"");
+
+    return toReturn;
   }
 };
 
@@ -131,16 +191,6 @@ std::ostream &operator<<(std::ostream &out, Playlist &pl)
   out << "========================================" << std::endl;
 
   return out;
-}
-
-void operator<<(Playlist &pl, Music &music)
-{
-  pl.addMusic(&music);
-}
-
-void operator>>(Playlist &pl, Music &music)
-{
-  pl.removeMusic(music.getTitle(), music.getArtistName());
 }
 
 #endif

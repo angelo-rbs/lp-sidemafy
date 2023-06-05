@@ -228,13 +228,13 @@ public:
     return it;
   }
 
-  void remove(size_t pos)
+  bool remove(size_t pos)
   {
     if (pos >= this->getSize())
       throw std::out_of_range("Posição de remoção fora do intervalo");
 
     if (this->getHead() == nullptr)
-      return;
+      return false;
 
     Node<T> *it = this->getHead();
 
@@ -242,14 +242,15 @@ public:
     {
       this->setHead(it->getNext());
       delete it;
-      return;
+      this->decreaseSize();
+      return true;
     }
 
     for (int i = 0; it != nullptr && i < pos - 1; i++)
       it = it->getNext(); // it aponta para (pos - 1)-ésimo nó
 
     if (it == nullptr || it->getNext() == nullptr) //
-      return;
+      return false;
 
     Node<T> *next = it->getNext()->getNext();
 
@@ -257,29 +258,29 @@ public:
     it->setNext(next);
 
     this->decreaseSize();
+    return true;
   }
 
-  bool remove(LinkedList<T> &toBeRemoved)
+  int remove(LinkedList<T> *toBeRemoved)
   {
 
-    Node<T> *it = toBeRemoved.getHead();
-    bool removedAll = true;
+    Node<T> *it = toBeRemoved->getHead();
+    int amountRemoved = 0;
 
     while (it != nullptr)
     {
 
       int positionToRemove = this->find(it->getValue());
 
-      if (positionToRemove != -1)
-        this->remove(positionToRemove);
-      else
-        removedAll = false;
+      if (positionToRemove != -1) 
+        amountRemoved += remove(positionToRemove);
 
       it = it->getNext();
     }
 
-    return removedAll;
+    return amountRemoved;
   }
+
 
   Node<T> *drop()
   {
@@ -312,7 +313,7 @@ public:
 
     int pos = 0;
     Node<T> *node = this->head;
-    while (node != nullptr && *(node->getValue()) != *valuePtr)
+    while (node != nullptr && (node->getValue()) != *valuePtr)
     {
       node = node->getNext();
       ++pos;
