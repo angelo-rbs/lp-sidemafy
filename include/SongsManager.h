@@ -45,24 +45,29 @@ public:
     return songs->getSize();
   }
 
+  Music getByPosition(int pos) {
+    return songs->access(pos)->getValue();
+  }
+
   // funcionalidades
 
-  bool add(Music* music) {
-    if (songs->find(music) == -1) return false;
   
-    return songs->append(music) != nullptr; 
+  bool add(Music* music) {
+    if (songs->find(music) != NOT_FOUND) return false;
+
+    return songs->append(music) != nullptr;
   }
 
   int add(LinkedList<Music>* list) {
 
-    Node<Music> *it = list->getHead();
+    Node<Music>* it = list->getHead();
     int amountAdd = 0;
 
     while (it != nullptr) {
       Music song = it->getValue();
 
       int found = (songs->find(song) != -1);
-      if (!found) { 
+      if (!found) {
         int sucessfullyAdd = (songs->append(song) != nullptr);
         amountAdd += sucessfullyAdd;
       }
@@ -79,19 +84,21 @@ public:
     if (pos == -1) throw std::invalid_argument("música não encontrada no gerenciador. tente novamente.");
 
 
-    // TEM QUE REMOVER DE TODAS AS PLAYLISTS TAMBÉM
+    // a remoção da música das playlists existentes fica a encargo do purge chamado por Sidemafy.h
 
     return songs->remove(pos);
   }
 
-  bool update(Music *music) {
+  bool remove(int pos) {
+    if (pos < 0 || pos >= songs->getSize()) return false;
 
-    int pos = songs->find(music);
-    if (pos == -1) throw std::invalid_argument("música não encontrada no gerenciador. tente novamente.");
+    // a remoção da música das playlists existentes fica a encargo do purge chamado por Sidemafy.h
 
-    Node<Music> *result = songs->insert(pos, music);
+    return songs->remove(pos);
+  }
 
-    return (result == nullptr);
+  bool update(Music* music, int pos) {
+    return songs->replace(music, pos);
   }
 
   void print() {
@@ -113,7 +120,8 @@ public:
         ++pos;
         node = node->getNext();
       }
-    } else
+    }
+    else
       std::cout << "[lista vazia]" << std::endl;
 
     std::cout << "================================================================================" << std::endl;
