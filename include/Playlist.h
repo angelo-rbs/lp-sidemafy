@@ -13,10 +13,6 @@ private:
   LinkedList<Music> *musics;
   std::string name;
 
-private:
-  LinkedList<Music> *musics;
-  std::string name;
-
 public:
   Playlist()
   {

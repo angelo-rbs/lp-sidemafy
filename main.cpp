@@ -20,7 +20,6 @@ int main()
   Playlist *result = *listA + *listB;
   result->print();
 
-
   std::cout << "\n\na primeira playlist é " << std::endl;
   listA->print();
 
