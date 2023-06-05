@@ -42,10 +42,30 @@ class PlaylistsManager {
       else return false;
     }
 
+    bool remove(int pos) {
+      return playlists->remove(pos);
+    }
+
     bool update(Playlist &pl) {
       int pos = playlists->find(pl);
 
       if (pos != NOT_FOUND) return (playlists->insert(pos, pl) != nullptr);
+    }
+
+    Playlist findByPosition(int pos) {
+      return getPlaylists()->access(pos)->getValue();
+    }
+
+    void addSongToPlaylist(Music song, int posPlaylist) {
+
+      Playlist pl = getPlaylists()->access(posPlaylist)->getValue();
+      pl.add(song);
+    }
+
+    void addSongToPlaylist(Music *song, int posPlaylist) {
+
+      Playlist pl = getPlaylists()->access(posPlaylist)->getValue();
+      pl.add(song);
     }
 
     void print() {

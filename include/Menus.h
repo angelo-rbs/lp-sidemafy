@@ -23,7 +23,7 @@ static const std::vector<std::string> menuMusica = {
 
 static const std::vector<std::string> menuPlaylist = { 
   "Listar playlists",
-  "Adicionar playlist",
+  "Criar playlist",
   "Apagar playlist",
   "Adicionar música a playlist",
   "Remover música de playlist" 
@@ -45,6 +45,18 @@ Music* addSongDialog() {
   return new Music(songTitle, artistName);
 }
 
+int removeSongDialog() {
+  std::cout << "Qual música deseja remover?" << std::endl;
+
+  int menuSongPosition, listSongPosition;
+
+  std::cin >> menuSongPosition;
+  listSongPosition = menuSongPosition - 1;
+ 
+
+  return listSongPosition;
+}
+
 Music* updateSongDialog() {
   std::string artistName;
   std::string songTitle;
@@ -59,15 +71,45 @@ Music* updateSongDialog() {
   return new Music(songTitle, artistName);
 }
 
-
 Playlist* createPlaylistDialog() {
   std::string playlistTitle;
 
-  std::cout << "Qual o nome da playlist?" << std::endl;
+  std::cout << "Qual o nome da nova playlist?" << std::endl;
   getline(std::cin >> std::ws, playlistTitle);
- 
 
   return new Playlist(playlistTitle);
+}
+
+int pickSong() {
+  int listSongPos, menuSongPos;
+
+  std::cout << "Escolha a música desejada" << std::endl;
+  std::cin >> menuSongPos;
+
+  listSongPos = menuSongPos - 1;
+
+  return listSongPos;
+}
+
+int pickPlaylist() {
+  int listPlaylistPos, menuPlaylistPos;
+
+  std::cout << "Escolha a playlist desejada" << std::endl;
+  std::cin >> menuPlaylistPos;
+
+  listPlaylistPos = menuPlaylistPos - 1;
+
+  return listPlaylistPos;
+}
+
+
+int removePlaylistDialog() {
+  int pos;
+
+  std::cout << "Qual o número da playlist a ser removida?" << std::endl;
+  std::cin >> pos;
+ 
+  return pos;
 } 
 
 #endif

@@ -66,17 +66,21 @@ public:
 
   void start() {
     int answear = 0;
-    std::string trash;
+    Music song;
+    Playlist pl;
 
     while (answear != -1) {
-      
+
       system("clear");
       answear = printGenericMenu(pickAMenu, GET_ANSWEAR);
+      int menuSongPosition = -1;
+      int listSongPosition = -1;
+      int songPos = -1;
+      int playlistPos = -1;
+      char trash;
 
       if (answear == MENU_MUSICA) {
         answear = printGenericMenu(menuMusica, GET_ANSWEAR);
-        int menuSongPosition = -1;
-        int listSongPosition = -1;
 
         switch (answear) {
 
@@ -85,8 +89,8 @@ public:
           listSongs();
           std::cout << "pressione [Enter] para continuar" << std::endl;
 
-          getchar();
-          trash = std::cin.get();
+          std::cin.get(trash);
+
           break;
 
         case 2:
@@ -95,13 +99,8 @@ public:
 
         case 3:
           listSongs();
-          std::cout << "Qual música deseja remover?" << std::endl;
 
-          std::cin >> menuSongPosition;
-
-          listSongPosition = menuSongPosition - 1;
-
-          if (removeSong(listSongPosition))
+          if (removeSong(removeSongDialog()))
             std::cout << "Música removida com sucesso!" << std::endl;
           else
             std::cout << "Erro ao tentar remover música. Tente novamente." << std::endl;
@@ -110,7 +109,7 @@ public:
 
         case 4:
           listSongs();
-          std::cout << "Qual música deseja editar as informações?" << std::endl;
+          std::cout << "De qual música deseja editar as informações?" << std::endl;
 
           std::cin >> menuSongPosition;
 
@@ -142,24 +141,65 @@ public:
         switch (answear) {
         case 1:
           listPlaylists();
+          std::cout << "pressione [Enter] para continuar" << std::endl;
+
+          std::cin.get(trash);
           break;
 
         case 2:
+          pm->create(*createPlaylistDialog());
           break;
 
         case 3:
+          if (pm->remove(removePlaylistDialog()))
+            std::cout << "Playlist removida com sucesso." << std::endl;
+          else
+            std::cout << "Erro ao tentar remover playlist>" << std::endl;
+
           break;
 
         case 4:
+          listSongs();
+          songPos = pickSong();
+
+          if (songPos < 1 || songPos > sm->getSize()) {
+            std::cout << "Posição de música inválida" << std::endl;
+            break;
+          }
+          song = sm->getByPosition(songPos);
+          system("clear");
+
+          listPlaylists();
+          playlistPos = pickPlaylist();
+          system("clear");
+
+          pm->addSongToPlaylist(song, playlistPos);
           break;
 
         case 5:
+          listPlaylists();
+          playlistPos = pickPlaylist();
+
+          pl = pm->findByPosition(playlistPos);
+          system("clear");
+
+          pl.print();
+          songPos = pickSong();
+
+          if (songPos < 1 || songPos > pl.getMusics()->getSize()) {
+            std::cout << "Posição de músca inválida" << std::endl;
+            break;
+          }
+
+          pl.remove(pl.find(songPos));
+
           break;
 
         default:
           break;
         }
-      } else break;
+      }
+      else break;
     }
   }
 

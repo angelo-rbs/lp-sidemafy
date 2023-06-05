@@ -140,6 +140,10 @@ public:
     return musics->find(song);
   }
 
+  Music* find(int pos) {
+    return new Music(musics->access(pos)->getValue());
+  }
+
   Playlist* operator+(Playlist &list) {
 
     Playlist* toReturn = new Playlist();
