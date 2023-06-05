@@ -229,6 +229,20 @@ public:
     return it;
   }
 
+  bool replace(T value, int pos) {
+    
+    if (remove(pos))
+      return (insert(pos, value) != nullptr);
+  }
+
+  bool replace(T *value, int pos) {
+
+    if (remove(pos))
+      return (insert(pos, *value) != nullptr);
+
+    return false;
+  }
+
   bool remove(size_t pos)
   {
     if (pos >= this->getSize())
@@ -322,6 +336,8 @@ public:
 
     return (node == nullptr) ? -1 : pos;
   }
+
+  
 
   Node<T> *access(size_t pos)
   {
