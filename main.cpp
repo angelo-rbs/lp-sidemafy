@@ -1,31 +1,25 @@
 #include <iostream>
 #include "include/LinkedList.h"
 #include "include/Playlist.h"
+#include "include/SongsManager.h"
 
 int main()
 {
 
   Playlist *listA = new Playlist("Playlist A");
 
-  listA->add(new Music("Control", "Frusciante"));
-  listA->add(new Music("Dark necessities", "RHCP"));
-  listA->add(new Music("Muito romântico", "Roberto Carlos"));
+  Music *m1 = new Music("Control", "Frusciante");
+  Music *m2 = new Music("Dark necessities", "RHCP");
+  Music *m3 = new Music("Muito romântico", "Roberto Carlos");
 
-  Playlist *listB = new Playlist("Playlist B");
+  listA->add(m1);
+  listA->add(m2);
+  listA->add(m3);
 
-  listB->add(new Music("Life of pablo", "KW"));
-  listB->add(new Music("Brazil", "Mcleena"));
-  listB->add(new Music("Muito romântico", "Roberto Carlos"));
+  SongsManager *sm = new SongsManager(*listA);
+  sm->remove(m1);
 
-  
-  Music *musicaTeste = new Music("asndlaksd", "dba,sdaskl");
-
-  std::cout << "antes de remover eh " << std::endl;
-  listA->print();
-  std::cout << std::endl;
-  
-  Playlist *listaTeste = *listA - *musicaTeste;
-  listaTeste->print();
+  sm->print();
 
   return 0;
 }
