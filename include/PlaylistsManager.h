@@ -56,6 +56,10 @@ public:
       return (playlists->insert(pos, pl) != nullptr);
   }
 
+  Playlist acess(int pos) {
+    return getPlaylists()->access(pos)->getValue();
+  }
+
   void print()
   {
     int pos = 1;
