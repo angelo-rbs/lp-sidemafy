@@ -33,7 +33,7 @@ public:
 
   // funcionalidades
 
-  void create(Playlist &pl)
+  void create(Playlist *pl)
   {
     playlists->append(pl);
   }

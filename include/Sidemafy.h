@@ -148,23 +148,55 @@ public:
           //   break;
         }
       }
-      else if (answear == MENU_PLAYLIST)
+      else if (answear == MENU_PLAYLIST) // ADD DEL ADD-SONG REMOVE-SONG
       {
+        int listPlaylistPosition = -1;
+
         answear = printGenericMenu(menuPlaylist, GET_ANSWEAR);
 
         switch (answear)
         {
         case 1:
           listPlaylists();
+          std::cout << "pressione [Enter] para continuar" << std::endl;
+
+          getchar();
+          trash = std::cin.get();
           break;
 
         case 2:
+          createPlaylist(createPlaylistDialog());
           break;
 
         case 3:
+          listPlaylists();
+          std::cout << "Qual playlist deseja remover?" << std::endl;
+
+          {
+            std::cin >> listPlaylistPosition;
+
+            Playlist toRemovePlaylist = pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue();
+
+            if (removePlaylist(toRemovePlaylist))
+              std::cout << "Playlist removida com sucesso!" << std::endl;
+            else
+              std::cout << "Erro ao tentar remover playlist. Tente novamente." << std::endl;
+          }
+
           break;
 
         case 4:
+          listPlaylists();
+          std::cout << "Qual a playlist que receberá a nova música?" << std::endl;
+
+          std::cin >> listPlaylistPosition;
+
+          addSongToPlaylist(pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue().getMusics(), addSongDialog()); // nao consigo passar a playlist por referencia
+
+          // pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue().add(addSongDialog());
+
+          std::cout << "Música adicionada com sucesso!" << std::endl;
+
           break;
 
         case 5:
@@ -243,8 +275,19 @@ public:
     pm->print();
   }
 
-  void createPlaylist()
+  void createPlaylist(Playlist *newPlaylist)
   {
+    pm->create(newPlaylist);
+  }
+
+  bool removePlaylist(Playlist &pl)
+  {
+    return pm->remove(pl);
+  }
+
+  void addSongToPlaylist(LinkedList<Music> *pl, Music *song)
+  {
+    pl->append(song);
   }
 };
 
