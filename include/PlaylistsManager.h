@@ -5,88 +5,101 @@
 #include "Playlist.h"
 #include "Music.h"
 
-class PlaylistsManager {
+class PlaylistsManager
+{
 
-  private:
+private:
+  LinkedList<Playlist> *playlists;
 
-    LinkedList<Playlist> *playlists;
+public:
+  // construtores
 
-  public:
+  PlaylistsManager()
+  {
+    this->playlists = new LinkedList<Playlist>();
+  }
 
-    // construtores
+  PlaylistsManager(LinkedList<Playlist> &playlist)
+  {
+    this->playlists = new LinkedList(playlist);
+  }
 
-    PlaylistsManager() {
-      this->playlists = new LinkedList<Playlist>();
-    }
+  // getter
 
-    PlaylistsManager(LinkedList<Playlist> &playlist) {
-      this->playlists = new LinkedList(playlist);
-    }
+  LinkedList<Playlist> *getPlaylists()
+  {
+    return playlists;
+  }
 
-    // getter  
+  // funcionalidades
 
-    LinkedList<Playlist>* getPlaylists() {
-      return playlists;
-    }
+  void create(Playlist *pl)
+  {
+    playlists->append(pl);
+  }
 
-    // funcionalidades
+  bool remove(Playlist &pl)
+  {
+    int pos = playlists->find(pl);
 
-    void create(Playlist &pl) {
-      playlists->append(pl);
-    }
+    if (pos != NOT_FOUND)
+      return playlists->remove(pos);
+    else
+      return false;
+  }
 
-    bool remove(Playlist &pl) {
-      int pos = playlists->find(pl);
+  bool update(Playlist &pl)
+  {
+    int pos = playlists->find(pl);
 
-      if (pos != NOT_FOUND) return playlists->remove(pos);
-      else return false;
-    }
+    if (pos != NOT_FOUND)
+      return (playlists->insert(pos, pl) != nullptr);
+  }
 
-    bool update(Playlist &pl) {
-      int pos = playlists->find(pl);
+  void print()
+  {
+    int pos = 1;
+    Node<Playlist> *node = playlists->getHead();
 
-      if (pos != NOT_FOUND) return (playlists->insert(pos, pl) != nullptr);
-    }
+    std::cout << "================================================================================" << std::endl;
+    std::cout << "Lista de playlists cadastradas" << std::endl;
+    std::cout << "================================================================================" << std::endl;
 
-    void print() {
-      int pos = 1;
-      Node<Playlist>* node = playlists->getHead();
+    if (node != nullptr)
+    {
+      while (node != nullptr)
+      {
 
-      std::cout << "================================================================================" << std::endl;
-      std::cout << "Lista de playlists cadastradas" << std::endl;
-      std::cout << "================================================================================" << std::endl;
+        Playlist pl = node->getValue();
 
-      if (node != nullptr) {
-        while (node != nullptr) {
+        std::cout << pos << " - " << pl.getName() << ", " << pl.getMusics()->getSize() << " músicas" << std::endl;
 
-          Playlist pl = node->getValue();
-
-          std::cout << pos << " - " << pl.getName() << ", " << pl.getMusics()->getSize() << " músicas" <<std::endl;
-
-          ++pos;
-          node = node->getNext();
-        }
-      } else
-        std::cout << "[lista vazia]" << std::endl;
-
-      std::cout << "================================================================================" << std::endl;
-    }
-
-    void purge(Music *song) {
-
-      Node<Playlist> *it = playlists->getHead();
-
-      while (it != nullptr) {
-
-        Playlist pl = it->getValue();
-        
-        if (pl.find(song) != -1)
-          pl.remove(song);
-
-        it = it->getNext();
+        ++pos;
+        node = node->getNext();
       }
-
     }
+    else
+      std::cout << "[lista vazia]" << std::endl;
+
+    std::cout << "================================================================================" << std::endl;
+  }
+
+  void purge(Music *song)
+  {
+
+    Node<Playlist> *it = playlists->getHead();
+
+    while (it != nullptr)
+    {
+
+      Playlist pl = it->getValue();
+
+      if (pl.find(song) != -1)
+        pl.remove(song);
+
+      it = it->getNext();
+    }
+  }
 };
 
 #endif

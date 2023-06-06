@@ -7,79 +7,91 @@
 #include "Menus.h"
 #include "Constants.h"
 
-class Sidemafy {
+class Sidemafy
+{
 
 private:
-  SongsManager* sm;
-  PlaylistsManager* pm;
+  SongsManager *sm;
+  PlaylistsManager *pm;
 
 public:
-
   // construtores
 
-  Sidemafy() {
+  Sidemafy()
+  {
     this->sm = new SongsManager();
     this->pm = new PlaylistsManager();
   }
 
-  Sidemafy(SongsManager& sm, PlaylistsManager& pm) {
+  Sidemafy(SongsManager &sm, PlaylistsManager &pm)
+  {
     this->sm = new SongsManager(sm);
     this->pm = new PlaylistsManager(pm);
   }
 
-  Sidemafy(SongsManager& sm) {
+  Sidemafy(SongsManager &sm)
+  {
     this->sm = new SongsManager(sm);
     this->pm = new PlaylistsManager();
   }
 
-  Sidemafy(PlaylistsManager& pm) {
+  Sidemafy(PlaylistsManager &pm)
+  {
     this->sm = new SongsManager();
     this->pm = new PlaylistsManager(pm);
   }
 
-  Sidemafy(LinkedList<Music>& songs, LinkedList<Playlist>& pls) {
+  Sidemafy(LinkedList<Music> &songs, LinkedList<Playlist> &pls)
+  {
     this->sm = new SongsManager(songs);
     this->pm = new PlaylistsManager(pls);
   }
 
-  Sidemafy(LinkedList<Music>& songs) {
+  Sidemafy(LinkedList<Music> &songs)
+  {
     this->sm = new SongsManager(songs);
     this->pm = new PlaylistsManager();
   }
 
-  Sidemafy(LinkedList<Playlist>& pls) {
+  Sidemafy(LinkedList<Playlist> &pls)
+  {
     this->sm = new SongsManager();
     this->pm = new PlaylistsManager(pls);
   }
 
   // getters
 
-  SongsManager* getSongsManager() {
+  SongsManager *getSongsManager()
+  {
     return this->sm;
   }
 
-  PlaylistsManager* getPlaylistsManager() {
+  PlaylistsManager *getPlaylistsManager()
+  {
     return this->pm;
   }
 
   // menus
 
-  void start() {
+  void start()
+  {
     int answear = 0;
     std::string trash;
 
-    while (answear != -1) {
-      
+    while (answear != -1)
+    {
+
       system("clear");
       answear = printGenericMenu(pickAMenu, GET_ANSWEAR);
 
-      if (answear == MENU_MUSICA) {
+      if (answear == MENU_MUSICA)
+      {
         answear = printGenericMenu(menuMusica, GET_ANSWEAR);
         int menuSongPosition = -1;
         int listSongPosition = -1;
 
-        switch (answear) {
-
+        switch (answear)
+        {
 
         case 1:
           listSongs();
@@ -114,7 +126,8 @@ public:
 
           std::cin >> menuSongPosition;
 
-          if (menuSongPosition < 1 || menuSongPosition > sm->getSize()) {
+          if (menuSongPosition < 1 || menuSongPosition > sm->getSize())
+          {
             std::cout << "Posição inválida. Tente novamente." << std::endl;
             break;
           }
@@ -124,7 +137,8 @@ public:
           Music music = sm->getByPosition(listSongPosition);
 
           std::cout << "Título: " << music.getTitle() << std::endl;
-          std::cout << "Artista: " << music.getArtistName() << std::endl << std::endl;
+          std::cout << "Artista: " << music.getArtistName() << std::endl
+                    << std::endl;
 
           sm->update(updateSongDialog(), listSongPosition);
           break;
@@ -132,25 +146,57 @@ public:
           // default:
           //   std::cout << "caiu no default" << std::endl;
           //   break;
-
         }
-
       }
-      else if (answear == MENU_PLAYLIST) {
+      else if (answear == MENU_PLAYLIST) // ADD DEL ADD-SONG REMOVE-SONG
+      {
+        int listPlaylistPosition = -1;
+
         answear = printGenericMenu(menuPlaylist, GET_ANSWEAR);
 
-        switch (answear) {
+        switch (answear)
+        {
         case 1:
           listPlaylists();
+          std::cout << "pressione [Enter] para continuar" << std::endl;
+
+          getchar();
+          trash = std::cin.get();
           break;
 
         case 2:
+          createPlaylist(createPlaylistDialog());
           break;
 
         case 3:
+          listPlaylists();
+          std::cout << "Qual playlist deseja remover?" << std::endl;
+
+          {
+            std::cin >> listPlaylistPosition;
+
+            Playlist toRemovePlaylist = pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue();
+
+            if (removePlaylist(toRemovePlaylist))
+              std::cout << "Playlist removida com sucesso!" << std::endl;
+            else
+              std::cout << "Erro ao tentar remover playlist. Tente novamente." << std::endl;
+          }
+
           break;
 
         case 4:
+          listPlaylists();
+          std::cout << "Qual a playlist que receberá a nova música?" << std::endl;
+
+          std::cin >> listPlaylistPosition;
+
+          addSongToPlaylist(pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue().getMusics(), addSongDialog()); // nao consigo passar a playlist por referencia
+
+          // pm->getPlaylists()->access(listPlaylistPosition - 1)->getValue().add(addSongDialog());
+
+          std::cout << "Música adicionada com sucesso!" << std::endl;
+
           break;
 
         case 5:
@@ -159,23 +205,28 @@ public:
         default:
           break;
         }
-      } else break;
+      }
+      else
+        break;
     }
   }
 
-  int printGenericMenu(const std::vector<std::string> options, bool shouldGetAnswear) {
+  int printGenericMenu(const std::vector<std::string> options, bool shouldGetAnswear)
+  {
     int pos = 0;
     int answear = -1;
     int size = options.size();
 
     std::cout << "============================================================" << std::endl;
 
-    while (pos < size) {
+    while (pos < size)
+    {
       std::cout << (pos + 1) << " - " << options[pos] << std::endl;
       ++pos;
     }
 
-    std::cout << "============================================================" << std::endl << std::endl;
+    std::cout << "============================================================" << std::endl
+              << std::endl;
 
     if (shouldGetAnswear)
       std::cin >> answear;
@@ -186,17 +237,21 @@ public:
 
   // funcionalidades
 
-  void listSongs() {
+  void listSongs()
+  {
     sm->print();
   }
 
-  void addSong(Music* song) {
+  void addSong(Music *song)
+  {
     sm->add(song);
   }
 
-  bool removeSong(Music* song) {
+  bool removeSong(Music *song)
+  {
 
-    if (sm->remove(song)) {
+    if (sm->remove(song))
+    {
       pm->purge(song);
       return true;
     }
@@ -204,26 +259,36 @@ public:
     return false;
   }
 
-  bool removeSong(int pos) {
+  bool removeSong(int pos)
+  {
     return sm->remove(pos);
   }
 
-  bool updateSong(Music* song) {
+  bool updateSong(Music *song)
+  {
     int pos = sm->getSongs()->find(song);
     return sm->update(song, pos);
   }
 
-  void listPlaylists() {
+  void listPlaylists()
+  {
     pm->print();
   }
 
-  void createPlaylist() {
-
-
-
+  void createPlaylist(Playlist *newPlaylist)
+  {
+    pm->create(newPlaylist);
   }
 
-};
+  bool removePlaylist(Playlist &pl)
+  {
+    return pm->remove(pl);
+  }
 
+  void addSongToPlaylist(LinkedList<Music> *pl, Music *song)
+  {
+    pl->append(song);
+  }
+};
 
 #endif
